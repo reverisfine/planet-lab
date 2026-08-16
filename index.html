@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#F1F3F6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="행성탐사대">
+<meta name="description" content="은또링쌤의 행성탐사대 · 성공적인 직업생활 인출 학습">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect width="60" height="60" rx="13" fill="%2316243F"/><defs><linearGradient id="g" x1=".3" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="%23CFF5EC"/><stop offset=".5" stop-color="%237DD6C2"/><stop offset="1" stop-color="%232E8A78"/></linearGradient></defs><ellipse cx="30" cy="32" rx="22" ry="7" fill="none" stroke="%232A7A6A" stroke-width="2.6" transform="rotate(-20 30 32)"/><circle cx="30" cy="32" r="12" fill="url(%23g)"/><ellipse cx="26" cy="28" rx="3.4" ry="2.3" fill="%23fff" opacity=".45"/><ellipse cx="30" cy="32" rx="22" ry="7" fill="none" stroke="%23D7F5EE" stroke-width="2.6" transform="rotate(-20 30 32)" stroke-dasharray="23 78" stroke-dashoffset="-2"/><g fill="%23D7F5EE"><circle cx="11" cy="13" r="1.2"/><circle cx="49" cy="18" r="1"/></g></svg>'>
+<link rel="apple-touch-icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect width="60" height="60" rx="13" fill="%2316243F"/><defs><linearGradient id="g" x1=".3" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="%23CFF5EC"/><stop offset=".5" stop-color="%237DD6C2"/><stop offset="1" stop-color="%232E8A78"/></linearGradient></defs><ellipse cx="30" cy="32" rx="22" ry="7" fill="none" stroke="%232A7A6A" stroke-width="2.6" transform="rotate(-20 30 32)"/><circle cx="30" cy="32" r="12" fill="url(%23g)"/><ellipse cx="26" cy="28" rx="3.4" ry="2.3" fill="%23fff" opacity=".45"/><ellipse cx="30" cy="32" rx="22" ry="7" fill="none" stroke="%23D7F5EE" stroke-width="2.6" transform="rotate(-20 30 32)" stroke-dasharray="23 78" stroke-dashoffset="-2"/><g fill="%23D7F5EE"><circle cx="11" cy="13" r="1.2"/><circle cx="49" cy="18" r="1"/></g></svg>'>
+<title>은또링쌤의 행성탐사대</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F3F6; --card:#FFFFFF; --soft:#F6F8FA; --soft2:#EDF0F4; --soft3:#E3E8EE;
+  --ink:#16181D; --ink2:#454B57; --dim:#868D9A; --dim3:#B3BAC5;
+  --line:#E9ECF1;
+  --navy:#16243F; --navy2:#25395E; --navybg:#EEF1F7;
+  --gold:#C9922A; --goldbg:#FBF3E2;
+  --mint:#2A8A76; --mint2:#7DD6C2; --mintbg:#E3F5F0;
+  --red:#B23A2E;
+  --ok:#12A46B; --okbg:#E6F6EF;
+  --mid:#D99A2B; --midbg:#FBF3E2;
+  --no:#D9503C; --nobg:#FCEDEA;
+  --sh:0 1px 2px rgba(22,24,29,.04), 0 3px 12px rgba(22,24,29,.05);
+  --sh2:0 10px 34px rgba(22,24,29,.16);
+  --sb:env(safe-area-inset-bottom,0px); --st:env(safe-area-inset-top,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:var(--bg)}
+body{font-family:'Noto Sans KR',system-ui,-apple-system,sans-serif;color:var(--ink);
+  font-size:15px;line-height:1.6;overscroll-behavior:none;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0;text-align:left}
+input{font:inherit}
+svg{display:block}
+.ico{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.num{font-variant-numeric:tabular-nums}
+.scr{display:none}
+.scr.on{display:block;animation:fi .22s ease}
+@keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.pad{max-width:520px;margin:0 auto;padding:0 16px}
+
+/* ===== 상단바 ===== */
+.nb{position:sticky;top:0;z-index:40;background:var(--bg);padding:calc(var(--st) + 8px) 16px 10px}
+.nb-in{max-width:520px;margin:0 auto;display:flex;align-items:center;gap:10px;min-height:44px}
+.icb{width:40px;height:40px;flex:0 0 40px;border-radius:50%;background:var(--card);box-shadow:var(--sh);
+  display:grid;place-items:center;color:var(--ink2)}
+.icb:active{background:var(--soft2)}
+.nb .ttl{flex:1;min-width:0;text-align:center;font-size:16px;font-weight:900;letter-spacing:-.5px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nb .ttl.l{text-align:left}
+.nb .ttl .cv{display:inline-block;vertical-align:-2px;margin-left:3px;color:var(--dim)}
+.nb .brand{flex:1;display:flex;align-items:center;gap:8px;font-size:17px;font-weight:900;letter-spacing:-.6px;min-width:0}
+.nb .blogo{width:29px;height:29px;flex:0 0 29px}
+.nb .brand .bt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.nb .brand .bt span{color:var(--mint)}
+.grass{display:flex;align-items:center;gap:5px;height:34px;padding:0 12px;border-radius:99px;
+  background:var(--card);box-shadow:var(--sh);font-size:12.5px;font-weight:900;color:var(--ink)}
+.grass i{width:16px;height:16px;border-radius:5px;background:linear-gradient(180deg,#CFF5EC,#5FC3AC);flex:0 0 16px}
+
+/* ===== 검색바 ===== */
+.sbar{display:flex;width:100%;align-items:center;gap:10px;height:50px;padding:0 16px;border-radius:16px;
+  background:var(--card);box-shadow:var(--sh);margin-bottom:14px}
+.sbar .ico{color:var(--dim3);flex:0 0 auto}
+.sbar input{flex:1;border:0;outline:0;background:none;font-size:14.5px;color:var(--ink);min-width:0;font-weight:500}
+.sbar input::placeholder{color:var(--dim3);font-weight:400}
+.sbar.ghost{color:var(--dim3);font-size:14.5px;font-weight:400}
+
+
+/* ===== 홈 상단 천구 ===== */
+.hero{position:relative;border-radius:20px;overflow:hidden;margin-bottom:14px;
+  background:radial-gradient(120% 94% at 50% 2%,#1C2C4A 0%,#0C1524 66%,#080D18 100%);
+  box-shadow:0 8px 26px rgba(12,21,36,.26)}
+.hero .cap{position:absolute;left:15px;top:13px;z-index:3;pointer-events:none}
+.hero .cap .k{font-size:9.5px;font-weight:900;letter-spacing:.18em;color:rgba(125,214,194,.92);text-transform:uppercase}
+.hero .cap h3{margin:2px 0 0;font-size:14.5px;font-weight:900;color:#fff;letter-spacing:-.5px}
+.hero .cnt{position:absolute;right:13px;top:13px;z-index:3;display:flex;align-items:center;gap:5px;
+  height:26px;padding:0 11px;border-radius:99px;background:rgba(125,214,194,.14);
+  border:1px solid rgba(125,214,194,.24);
+  backdrop-filter:blur(6px);color:#9FE7D6;font-size:11px;font-weight:900;pointer-events:none}
+.sphere{position:relative;z-index:0;isolation:isolate;width:100%;aspect-ratio:1/.72;
+  touch-action:none;user-select:none}
+.sphere canvas{width:100%;height:100%;display:block}
+.pins{position:absolute;inset:0;pointer-events:none}
+.pin{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;
+  display:flex;align-items:center;gap:5px;height:26px;padding:0 10px 0 7px;border-radius:99px;
+  background:rgba(255,255,255,.13);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);
+  font-size:11px;font-weight:900;color:#fff;white-space:nowrap;transition:opacity .25s;
+  box-shadow:0 3px 12px rgba(0,0,0,.45)}
+.pin .d{width:6px;height:6px;border-radius:50%;flex:0 0 6px}
+.pin .s{color:rgba(255,255,255,.6);font-weight:500}
+.pin.done{background:rgba(217,154,43,.26);border-color:rgba(240,206,124,.6);color:#FFE0A3}
+.pin:active{transform:translate(-50%,-50%) scale(.94)}
+.hero .ohint{position:absolute;left:0;right:0;bottom:9px;text-align:center;z-index:2;
+  font-size:10.5px;color:rgba(255,255,255,.4);font-weight:500;pointer-events:none;
+  display:flex;align-items:center;justify-content:center;gap:6px}
+.hero .ohint .ico{width:13px;stroke-width:1.6}
+
+/* ===== 이어서 공부하기 ===== */
+.resume{display:flex;align-items:center;gap:12px;width:100%;padding:16px 16px;border-radius:18px;
+  background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;box-shadow:0 6px 22px rgba(22,36,63,.24);
+  margin-bottom:14px;transition:.14s}
+.resume:active{transform:scale(.985)}
+.resume .planet{width:52px;height:52px;flex:0 0 52px}
+.resume .t{flex:1;min-width:0}
+.resume .t b{display:block;font-size:15.5px;font-weight:900;letter-spacing:-.5px;line-height:1.4}
+.resume .t .go{display:flex;align-items:center;gap:7px;margin-top:7px;font-size:11.5px;color:#B9C6DC;font-weight:500;min-width:0}
+.resume .t .go .lb{flex:0 0 auto;white-space:nowrap}
+.resume .t .go .chip{background:rgba(255,255,255,.94);color:var(--navy);border-radius:99px;
+  padding:4px 11px;font-size:11px;font-weight:900;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.resume .cv{color:rgba(255,255,255,.6);flex:0 0 auto}
+
+/* ===== 공통 카드 ===== */
+.card{background:var(--card);border-radius:18px;box-shadow:var(--sh);overflow:hidden;margin-bottom:12px}
+.card.pad{padding:17px 17px 18px}
+.card .hd{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:900;letter-spacing:-.5px}
+.card .hd .ico{width:19px;color:var(--navy)}
+.card .desc{margin:9px 0 0;font-size:13px;color:var(--dim);font-weight:500;line-height:1.65;word-break:keep-all}
+.linkrow{display:flex;align-items:center;gap:11px;width:100%;padding:17px 17px}
+.linkrow .ico{width:19px;color:var(--navy);flex:0 0 auto}
+.linkrow b{flex:1;font-size:16px;font-weight:900;letter-spacing:-.5px}
+.linkrow .cnt{font-size:13px;font-weight:900;color:var(--mint)}
+.linkrow .cv{color:var(--dim3);flex:0 0 auto}
+.linkrow:active{background:var(--soft)}
+
+/* ===== 핵심 단원 박스 ===== */
+.corebox{position:relative;border:2px solid var(--navy);border-radius:20px;padding:26px 14px 16px;
+  margin:30px 0 14px;background:var(--card)}
+.corebox .tag{position:absolute;top:-15px;left:50%;transform:translateX(-50%);
+  background:var(--navy);color:#fff;font-size:12.5px;font-weight:900;letter-spacing:-.3px;
+  padding:7px 18px;border-radius:99px;white-space:nowrap}
+.corebox .lead{text-align:center;font-size:13px;color:var(--ink2);font-weight:500;margin:0 0 14px}
+.urow{display:flex;align-items:center;gap:13px;width:100%;padding:13px 12px;border-radius:14px;
+  background:var(--soft);margin-bottom:9px;transition:.14s}
+.urow:last-of-type{margin-bottom:0}
+.urow:active{background:var(--soft2)}
+.urow .gno{flex:0 0 auto;min-width:52px;height:36px;border-radius:11px;background:var(--navy);color:#fff;
+  display:grid;place-items:center;font-size:13px;font-weight:900;letter-spacing:-.4px}
+.urow.done .gno{background:var(--mint)}
+.urow .t{flex:1;min-width:0}
+.urow .t b{display:block;font-size:15px;font-weight:900;letter-spacing:-.5px;line-height:1.35;word-break:keep-all}
+.urow .t .tr{display:block;height:4px;border-radius:99px;background:var(--soft3);margin-top:7px;overflow:hidden}
+.urow .t .tr i{display:block;height:100%;background:var(--mint);border-radius:99px;transition:width .5s}
+.urow .v{font-size:12.5px;font-weight:700;color:var(--dim);flex:0 0 auto}
+.coretot{text-align:center;font-size:13.5px;font-weight:900;color:var(--navy);margin-top:14px}
+.morebtn{display:flex;align-items:center;justify-content:center;gap:7px;margin:0 auto 14px;
+  height:44px;padding:0 22px;border-radius:99px;background:var(--navy);color:#fff;
+  font-size:13.5px;font-weight:900;letter-spacing:-.3px}
+.morebtn .cv{transition:transform .2s}
+.morebtn.open .cv{transform:rotate(180deg)}
+.diag{margin:0 0 14px;padding:14px 16px;border-radius:14px;background:#FCEDEA;border:1.5px solid #F0BDB2}
+.diag b{display:block;font-size:13.5px;font-weight:900;color:#B23A2E;margin-bottom:6px}
+.diag ul{margin:0;padding-left:17px;font-size:12px;color:#8A3D31;line-height:1.75}
+.foot{text-align:center;padding:22px 0 10px;color:var(--dim3);font-size:11px;font-weight:500}
+</style>
+<style>
+/* ===== 강 화면 : 대분류 아코디언 트리 ===== */
+.gbox{background:var(--card);border-radius:18px;box-shadow:var(--sh);margin-bottom:11px;overflow:hidden}
+.ghd{display:flex;align-items:center;gap:9px;width:100%;padding:17px 16px}
+.ghd b{flex:1;font-size:16px;font-weight:900;letter-spacing:-.6px;line-height:1.35;word-break:keep-all}
+.gbox.open .ghd b{color:var(--navy)}
+.ghd .meta{font-size:12px;color:var(--dim);font-weight:500;flex:0 0 auto}
+.ghd .cv{color:var(--dim3);flex:0 0 auto;transition:transform .22s}
+.gbox.open .ghd .cv{transform:rotate(180deg)}
+.gbody{display:none;padding:0 16px 4px}
+.gbox.open .gbody{display:block}
+.tree{position:relative;padding-left:4px}
+.sub{position:relative;padding:11px 0 11px 22px}
+.sub:before{content:'';position:absolute;left:4px;top:0;bottom:0;width:1.5px;background:var(--soft3)}
+.sub:last-of-type:before{bottom:auto;height:23px}
+.sub:after{content:'';position:absolute;left:4px;top:23px;width:13px;height:1.5px;background:var(--soft3)}
+.subhd{display:flex;align-items:center;gap:8px;width:100%}
+.subhd b{flex:1;font-size:14.5px;font-weight:700;letter-spacing:-.4px;line-height:1.4;word-break:keep-all}
+.sub.open .subhd b{color:var(--navy);font-weight:900}
+.subhd .meta{font-size:11.5px;color:var(--dim);font-weight:500;flex:0 0 auto}
+.subhd .cv{color:var(--dim3);flex:0 0 auto;transition:transform .22s;width:16px}
+.sub.open .subhd .cv{transform:rotate(180deg)}
+.tlist{display:none;padding:10px 0 2px 14px;position:relative}
+.sub.open .tlist{display:block}
+.tlist:before{content:'';position:absolute;left:0;top:2px;bottom:14px;width:1.5px;background:var(--soft3)}
+.tpill{display:flex;align-items:center;gap:9px;width:100%;padding:11px 13px;border-radius:12px;
+  background:var(--soft);margin-bottom:7px;position:relative;transition:.14s}
+.tpill:before{content:'';position:absolute;left:-14px;top:22px;width:13px;height:1.5px;background:var(--soft3)}
+.tpill:active{background:var(--soft2)}
+.tpill.know{background:var(--navy)}
+.tpill.know .no{background:rgba(255,255,255,.16);color:#fff}
+.tpill.know b{color:#fff}
+.tpill.know .stars{color:#F0CE7C}
+.tpill .no{flex:0 0 auto;font-size:10.5px;font-weight:900;background:var(--card);color:var(--ink2);
+  padding:3px 8px;border-radius:99px;box-shadow:var(--sh)}
+.tpill b{flex:1;font-size:13.5px;font-weight:700;letter-spacing:-.4px;line-height:1.4;word-break:keep-all}
+.tpill .stars{font-size:11px;color:var(--mint);letter-spacing:1px;flex:0 0 auto}
+.tpill .mk{width:7px;height:7px;border-radius:50%;flex:0 0 7px}
+.mk.fuzzy{background:var(--mid)} .mk.no{background:var(--no)} .mk.bm{background:var(--navy)}
+.allbtn{display:flex;align-items:center;gap:9px;width:100%;padding:14px 16px;margin:6px -16px 0;
+  width:calc(100% + 32px);background:var(--navy);color:#fff;font-size:13.5px;font-weight:900;letter-spacing:-.3px}
+.allbtn .ico{width:17px;color:#F0CE7C}
+.allbtn .cv{margin-left:auto;color:rgba(255,255,255,.5)}
+.ubar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.97);
+  backdrop-filter:blur(16px);border-top:1px solid var(--line);padding-bottom:var(--sb)}
+.ubar-in{max-width:520px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:12px 16px}
+.ubar .n{font-size:13px;font-weight:900;color:var(--ink)}
+.ubar .n span{color:var(--dim);font-weight:500}
+.ubar .go{margin-left:auto;display:flex;align-items:center;gap:7px;height:44px;padding:0 20px;
+  border-radius:99px;background:var(--navy);color:#fff;font-size:13.5px;font-weight:900;letter-spacing:-.3px}
+.ubar .go:active{transform:scale(.97)}
+
+/* ===== 학습 화면 ===== */
+.crumb{display:flex;gap:6px;overflow-x:auto;padding:2px 16px 12px;scrollbar-width:none;max-width:520px;margin:0 auto}
+.crumb::-webkit-scrollbar{display:none}
+.crumb .c{flex:0 0 auto;display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;
+  color:var(--dim);white-space:nowrap}
+.crumb .c b{background:var(--card);border-radius:99px;padding:7px 13px;box-shadow:var(--sh);font-weight:700}
+.crumb .c.on b{background:var(--navybg);color:var(--navy);box-shadow:none;border:1.5px solid var(--navy);font-weight:900}
+.crumb .c .sep{color:var(--dim3)}
+.thead{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:15px 16px 17px}
+.thead-in{max-width:520px;margin:0 auto}
+.thead .r1{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.thead .tno{font-size:11px;font-weight:900;background:rgba(255,255,255,.15);border-radius:99px;padding:5px 12px}
+.thead .src{font-size:11px;font-weight:700;background:rgba(125,214,194,.18);color:#9FE7D6;border-radius:99px;padding:5px 11px}
+.thead .bm{margin-left:auto;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  color:rgba(255,255,255,.65)}
+.thead .bm.on{color:#F0CE7C}
+.thead .bm .ico{width:19px}
+.thead h2{margin:0;font-size:21px;font-weight:900;letter-spacing:-.9px;line-height:1.36;word-break:keep-all}
+.thead .stars{font-size:13px;color:#F0CE7C;letter-spacing:2px;margin-left:6px;vertical-align:2px}
+.thead .stars i{color:rgba(255,255,255,.28);font-style:normal}
+
+/* 모드 세그먼트 */
+.segwrap{display:flex;justify-content:flex-end;padding:14px 16px 0;max-width:520px;margin:0 auto}
+.seg{display:flex;gap:2px;padding:4px;border-radius:99px;background:var(--card);box-shadow:var(--sh)}
+.seg button{padding:8px 18px;border-radius:99px;font-size:13px;font-weight:700;color:var(--dim);transition:.16s;text-align:center}
+.seg button.on{background:var(--navy);color:#fff;font-weight:900}
+.seg button.on.ans{background:var(--red)}
+
+/* 인출 블록 */
+.blk{background:var(--card);border-radius:18px;box-shadow:var(--sh);padding:16px 15px 12px;margin-bottom:12px}
+.blk .q{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.blk .q b{flex:1;font-size:15px;font-weight:900;letter-spacing:-.5px;line-height:1.4;word-break:keep-all}
+.blk .q .n{color:var(--mint);font-weight:900;font-size:16px}
+.blk .q .note{width:32px;height:32px;flex:0 0 32px;border-radius:9px;display:grid;place-items:center;color:var(--dim3)}
+.blk .q .note.on{color:var(--navy);background:var(--navybg)}
+.blk .q .note .ico{width:18px}
+.ans{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ans li{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;line-height:1.6}
+.ans li .i{flex:0 0 auto;font-size:12px;font-weight:700;color:var(--dim);padding-top:9px;min-width:11px;text-align:right}
+.ans li .v{flex:1;min-height:38px;border-radius:10px;background:var(--soft2);padding:8px 12px;
+  display:flex;align-items:center;word-break:keep-all;transition:background .2s}
+.ans li .v .tx{color:transparent;transition:color .2s}
+.mode-hint .ans li .v .tx{color:var(--mint);font-weight:900}
+.mode-ans .ans li .v{background:var(--soft)}
+.mode-ans .ans li .v .tx{color:var(--ink2);font-weight:500}
+.mode-ans .ans li .v .tx em{font-style:normal;color:var(--red);font-weight:900}
+.ans li.aux .v{background:transparent;border:1.5px dashed var(--line)}
+.ans li.aux .i{color:var(--dim3)}
+.mode-ans .ans li.aux .v .tx{color:var(--dim);font-weight:500}
+.mode-ans .ans li.aux .v .tx em{color:var(--ink2);font-weight:700}
+.blkfoot{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
+.tagx{font-size:11px;font-weight:700;padding:5px 11px;border-radius:99px;background:var(--soft2);color:var(--ink2)}
+.tagx.g{background:var(--mintbg);color:var(--mint)} .tagx.o{background:var(--okbg);color:var(--ok)}
+.pairbtn{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:900;
+  padding:6px 13px;border-radius:99px;background:var(--navybg);color:var(--navy)}
+.pairbtn .ico{width:14px;stroke-width:2.2}
+
+/* 판정 */
+.judge{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:16px 0 6px}
+.jb{height:58px;border-radius:15px;background:var(--card);box-shadow:var(--sh);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;transition:.13s}
+.jb .ico{width:18px;color:var(--dim)}
+.jb b{font-size:12.5px;font-weight:900;letter-spacing:-.3px}
+.jb:active{transform:scale(.95)}
+.jb.k .ico{color:var(--ok)} .jb.k.on{background:var(--okbg);box-shadow:inset 0 0 0 2px var(--ok)}
+.jb.m .ico{color:var(--mid)} .jb.m.on{background:var(--midbg);box-shadow:inset 0 0 0 2px var(--mid)}
+.jb.n .ico{color:var(--no)} .jb.n.on{background:var(--nobg);box-shadow:inset 0 0 0 2px var(--no)}
+.jhint{text-align:center;font-size:11.5px;color:var(--dim);font-weight:500;margin-bottom:4px}
+
+/* 이전/다음 */
+.pager{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--navy);padding-bottom:var(--sb)}
+.pager-in{max-width:520px;margin:0 auto;display:flex;align-items:center}
+.pager button{flex:1;display:flex;align-items:center;gap:8px;padding:16px 18px;color:#fff;
+  font-size:14px;font-weight:900;letter-spacing:-.3px}
+.pager button:last-child{justify-content:flex-end}
+.pager button:disabled{color:rgba(255,255,255,.28)}
+.pager .mid{flex:0 0 auto;font-size:11.5px;color:rgba(255,255,255,.5);font-weight:700;padding:0 6px}
+</style>
+<style>
+/* ===== 노트 / 검색 리스트 ===== */
+.tabs{display:flex;gap:7px;margin-bottom:14px}
+.tabs button{flex:1;height:42px;border-radius:13px;font-size:13.5px;font-weight:700;text-align:center;
+  background:var(--card);box-shadow:var(--sh);color:var(--ink2);transition:.16s;display:flex;
+  align-items:center;justify-content:center;gap:6px}
+.tabs button.on{background:var(--navy);color:#fff;font-weight:900}
+.tabs button .c{font-size:11.5px;opacity:.6}
+.lrow{display:flex;align-items:center;gap:12px;width:100%;padding:15px 16px;border-bottom:1px solid var(--line)}
+.lrow:last-child{border-bottom:0}
+.lrow:active{background:var(--soft)}
+.lrow .mk2{width:8px;height:8px;border-radius:50%;flex:0 0 8px}
+.mk2.know{background:var(--ok)} .mk2.fuzzy{background:var(--mid)}
+.mk2.no{background:var(--no)} .mk2.none{background:var(--dim3)}
+.lrow .t{flex:1;min-width:0}
+.lrow .t b{display:block;font-size:14.5px;font-weight:900;letter-spacing:-.5px;line-height:1.42;word-break:keep-all}
+.lrow .t small{display:block;font-size:11.5px;color:var(--dim);font-weight:500;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lrow .t .kw{display:block;font-size:12px;color:var(--ink2);line-height:1.55;margin-top:5px;word-break:keep-all}
+.lrow .cv{color:var(--dim3);flex:0 0 auto}
+.lrow .bmk{color:var(--navy);flex:0 0 auto}
+.lrow .bmk .ico{width:17px}
+mark{background:var(--mintbg);color:var(--mint);border-radius:4px;padding:0 2px;font-weight:900}
+.void{text-align:center;padding:56px 24px;color:var(--dim)}
+.void .ico{width:30px;height:30px;margin:0 auto 12px;opacity:.35;stroke-width:1.4}
+.void p{margin:0;font-size:13.5px;line-height:1.75;word-break:keep-all;font-weight:500}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:52px;
+  border-radius:14px;font-size:14px;font-weight:900;letter-spacing:-.4px;margin-bottom:10px;transition:.13s}
+.btn:active{transform:scale(.985)}
+.btn.p{background:var(--navy);color:#fff}
+.btn.s{background:var(--card);box-shadow:var(--sh);color:var(--ink)}
+.btn.g{background:transparent;color:var(--dim);height:44px;font-size:13px;font-weight:700}
+.chips{display:flex;gap:7px;overflow-x:auto;padding:0 16px 14px;scrollbar-width:none;max-width:520px;margin:0 auto}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;height:36px;padding:0 15px;border-radius:99px;background:var(--card);box-shadow:var(--sh);
+  color:var(--ink2);font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;white-space:nowrap;transition:.16s}
+.chip.on{background:var(--navy);color:#fff;font-weight:900}
+.chip .n{font-size:11.5px;opacity:.6}
+
+/* 짝 비교 */
+.pset{margin-bottom:14px}
+.pcap{font-size:11.5px;color:var(--dim);font-weight:700;margin:0 2px 8px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pc{padding:15px 13px;border-radius:16px;background:var(--card);box-shadow:var(--sh)}
+.pc.l{border-top:3px solid var(--navy)} .pc.r{border-top:3px solid var(--gold)}
+.pc h4{margin:0 0 10px;font-size:13.5px;font-weight:900;letter-spacing:-.5px;line-height:1.4;word-break:keep-all}
+.pc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.pc li{font-size:12px;line-height:1.55;color:var(--ink2);padding-left:10px;position:relative;word-break:keep-all}
+.pc li:before{content:'';position:absolute;left:0;top:7px;width:3.5px;height:3.5px;border-radius:50%;background:var(--dim3)}
+.pc li em{font-style:normal;font-weight:900;color:var(--ink)}
+
+.toast{position:fixed;left:50%;bottom:calc(84px + var(--sb));transform:translate(-50%,14px);z-index:99;
+  background:var(--navy);color:#fff;padding:12px 20px;border-radius:99px;font-size:13px;font-weight:700;
+  opacity:0;pointer-events:none;transition:.26s;box-shadow:var(--sh2);white-space:nowrap;max-width:88vw;
+  overflow:hidden;text-overflow:ellipsis}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.sheet{position:fixed;inset:0;z-index:96;display:none}
+.sheet.on{display:block}
+.sheet .bg{position:absolute;inset:0;background:rgba(22,24,29,.4)}
+.sheet .pan{position:absolute;left:0;right:0;bottom:0;background:var(--card);
+  border-radius:22px 22px 0 0;padding:10px 0 calc(14px + var(--sb));max-height:72vh;overflow-y:auto;
+  animation:up .26s cubic-bezier(.2,.75,.3,1)}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+.sheet .grab{width:38px;height:4px;border-radius:99px;background:var(--soft3);margin:4px auto 12px}
+.sheet .it{display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;font-size:15px;font-weight:700}
+.sheet .it.on{color:var(--navy);font-weight:900;background:var(--navybg)}
+.sheet .it .gno{min-width:48px;height:32px;border-radius:9px;background:var(--soft2);color:var(--ink2);
+  display:grid;place-items:center;font-size:12px;font-weight:900;flex:0 0 auto}
+.sheet .it.on .gno{background:var(--navy);color:#fff}
+.sheet .it .v{margin-left:auto;font-size:12px;color:var(--dim);font-weight:700}
+@media (max-width:359px){.thead h2{font-size:18px}.corebox .tag{font-size:11.5px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+:focus-visible{outline:2.5px solid var(--navy);outline-offset:2px;border-radius:8px}
+</style>
+</head>
+<body>
+<svg class="sr" aria-hidden="true"><defs>
+<g id="i-play"><path d="M7 4.6 19 12 7 19.4z" fill="currentColor" stroke="none"/></g>
+<g id="i-chev"><path d="M9 5l7 7-7 7"/></g>
+<g id="i-x"><path d="M6 6l12 12M18 6L6 18"/></g>
+<g id="i-globe"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8"/><ellipse cx="12" cy="12" rx="4" ry="8.6"/></g>
+<g id="i-map"><path d="M9 3.4 3.6 5.8v14.8L9 18.2l6 2.4 5.4-2.4V3.4L15 5.8z"/><path d="M9 3.4v14.8M15 5.8v14.8"/></g>
+<g id="i-note"><path d="M6 3.5h9l4 4V20a.6.6 0 0 1-.6.6H6a.6.6 0 0 1-.6-.6V4.1A.6.6 0 0 1 6 3.5z"/><path d="M14.6 3.7v4.2h4.2M8.6 12.5h7M8.6 16h4.6"/></g>
+<g id="i-search"><circle cx="10.8" cy="10.8" r="6.7"/><path d="M15.7 15.7 20.6 20.6"/></g>
+<g id="i-hash"><path d="M9.2 3.8 7.4 20.2M16.6 3.8 14.8 20.2M3.9 8.8h16.2M3.3 15.2h16.2"/></g>
+<g id="i-scale"><path d="M12 4.2v15.6M6.8 6.8h10.4M4.4 18.6h4.8M14.8 18.6h4.8"/><path d="M6.8 6.8 4.4 14.2h4.8zM17.2 6.8 14.8 14.2h4.8z"/></g>
+<g id="i-check"><path d="M4.8 12.6 9.6 17.4 19.2 6.9"/></g>
+<g id="i-slash"><circle cx="12" cy="12" r="8.4"/><path d="M6 18 18 6"/></g>
+<g id="i-turn"><path d="M4.4 8.6h11.2a4 4 0 0 1 0 8H9.2"/><path d="M11.8 12.7 8.6 16.6l3.2 3.4"/></g>
+<g id="i-bulb"><path d="M9.5 18.3h5M10.3 20.9h3.4"/><path d="M12 3.2a5.9 5.9 0 0 0-3.4 10.7c.6.5 1 1.2 1 2h4.8c0-.8.4-1.5 1-2A5.9 5.9 0 0 0 12 3.2z"/></g>
+<g id="i-refresh"><path d="M20.2 12a8.2 8.2 0 1 1-2.5-5.9"/><path d="M20.6 4.4v5h-5"/></g>
+<g id="i-flag"><path d="M5.6 21V4.2M5.6 4.6h11.6l-2 4 2 4H5.6"/></g>
+<g id="i-book"><path d="M4.6 4.6h6a2 2 0 0 1 1.4.6 2 2 0 0 1 1.4-.6h6v14h-6a2 2 0 0 0-1.4.6 2 2 0 0 0-1.4-.6h-6z"/><path d="M12 5.2v14"/></g>
+<g id="i-star"><path d="M12 3.6 14.5 9l5.9.6-4.4 4 1.3 5.8L12 16.5 6.7 19.4 8 13.6l-4.4-4L9.5 9z"/></g>
+<g id="i-spark"><path d="M12 3.4v4M12 16.6v4M4.4 12H8M16 12h3.6M6.6 6.6 9 9M15 15l2.4 2.4M17.4 6.6 15 9M9 15l-2.4 2.4"/></g>
+<g id="i-clock"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.2V12l3.2 2"/></g>
+<g id="i-drag"><path d="M4.8 12h14.4"/><path d="M8.4 8.4 4.8 12l3.6 3.6M15.6 8.4 19.2 12l-3.6 3.6"/></g>
+<g id="i-back"><path d="M19 12H5"/><path d="M11 5.5 4.5 12l6.5 6.5"/></g>
+<g id="i-cdown"><path d="M5 9l7 7 7-7"/></g>
+<g id="i-bookmark"><path d="M6.5 3.6h11v17l-5.5-4-5.5 4z"/></g>
+<g id="i-tree"><rect x="9" y="3" width="6" height="5" rx="1.4"/><rect x="2.6" y="16" width="6" height="5" rx="1.4"/><rect x="15.4" y="16" width="6" height="5" rx="1.4"/><path d="M12 8v4M5.6 16v-4h12.8v4"/></g>
+</defs></svg>
+<!-- ============ 홈 ============ -->
+<section class="scr on" id="s-home">
+  <div class="nb"><div class="nb-in">
+    <div class="brand">
+      <svg class="blogo" viewBox="0 0 60 60" aria-hidden="true">
+        <defs><linearGradient id="blg" x1=".28" y1="0" x2=".72" y2="1">
+          <stop offset="0" stop-color="#CFF5EC"/><stop offset=".45" stop-color="#7DD6C2"/>
+          <stop offset="1" stop-color="#2E8A78"/></linearGradient></defs>
+        <ellipse cx="30" cy="32" rx="26" ry="6.2" fill="none" stroke="#2A7A6A" stroke-width="4" transform="rotate(-25 30 32)"/>
+        <circle cx="30" cy="32" r="12" fill="url(#blg)"/>
+        <ellipse cx="26" cy="28" rx="3.6" ry="2.4" fill="#fff" opacity=".5"/>
+        <path d="M18 32a12 12 0 0 0 24 0" fill="#0B3B33" opacity=".08"/>
+        <ellipse cx="30" cy="32" rx="26" ry="6.2" fill="none" stroke="#EAFBF6" stroke-width="4"
+          transform="rotate(-25 30 32)" stroke-dasharray="21 92" stroke-dashoffset="-3"/>
+      </svg><span class="bt">은또링쌤의 <span>행성탐사대</span></span></div>
+    <div class="grass"><i></i><span id="grassN">0</span></div>
+  </div></div>
+  <div class="pad">
+    <div id="diagBox"></div>
+    <button class="sbar ghost" id="openSearch">
+      <svg class="ico"><use href="#i-search"/></svg>어떤 개념을 찾으시나요?</button>
+    <div class="hero">
+      <div class="cap"><div class="k">Celestial Map</div><h3>토픽 하나가 별 하나</h3></div>
+      <div class="cnt"><span id="skyN">0 / 20</span></div>
+      <div class="sphere" id="sphere"><canvas id="sky"></canvas><div class="pins" id="pins"></div></div>
+      <div class="ohint"><svg class="ico"><use href="#i-drag"/></svg>위아래·좌우로 밀어 천구를 돌려보세요</div>
+    </div>
+    <button class="resume" id="resumeBtn"></button>
+    <div class="card pad">
+      <div class="hd"><svg class="ico"><use href="#i-book"/></svg>오답 노트</div>
+      <p class="desc" id="noteDesc">잘 안 외워지는 토픽은 <b>몰라요·헷갈려요</b>로 판정하면 여기에 모입니다.</p>
+    </div>
+    <button class="card linkrow" id="bmBtn">
+      <svg class="ico"><use href="#i-bookmark"/></svg><b>다시 볼 토픽</b>
+      <span class="cnt num" id="bmN"></span><svg class="ico cv" style="width:17px"><use href="#i-chev"/></svg></button>
+
+    <div class="corebox">
+      <div class="tag">수능 필수 5강</div>
+      <p class="lead">대부분 이 단원들에서 문제가 나와요.</p>
+      <div id="coreList"></div>
+      <div class="coretot" id="coreTot"></div>
+    </div>
+    <button class="morebtn" id="moreBtn"><span id="moreTx">추가 15강 · 더 보기</span>
+      <svg class="ico cv" style="width:16px"><use href="#i-cdown"/></svg></button>
+    <div id="restList"></div>
+    <div class="foot">은또링쌤의 행성탐사대 · Planet Lab<br><span id="verTx"></span>무단 전재 및 재배포 금지</div>
+  </div>
+</section>
+
+<!-- ============ 강 (대분류 트리) ============ -->
+<section class="scr" id="s-unit">
+  <div class="nb"><div class="nb-in">
+    <button class="icb" id="unitBack"><svg class="ico"><use href="#i-back"/></svg></button>
+    <button class="ttl" id="unitTitle"></button>
+    <button class="icb" id="openSearch2"><svg class="ico"><use href="#i-search"/></svg></button>
+  </div></div>
+  <div class="pad" id="unitBody" style="padding-bottom:90px"></div>
+  <div class="ubar"><div class="ubar-in">
+    <div class="n" id="unitCnt"></div>
+    <button class="go" id="unitGo"><svg class="ico" style="width:17px"><use href="#i-play"/></svg>이어서 학습</button>
+  </div></div>
+</section>
+
+<!-- ============ 학습 ============ -->
+<section class="scr" id="s-study">
+  <div class="nb"><div class="nb-in">
+    <button class="icb" id="studyBack"><svg class="ico"><use href="#i-back"/></svg></button>
+    <div class="ttl" id="studyTitle"></div>
+    <button class="icb" id="openSearch3"><svg class="ico"><use href="#i-search"/></svg></button>
+  </div></div>
+  <div class="crumb" id="crumb"></div>
+  <div class="thead"><div class="thead-in">
+    <div class="r1">
+      <span class="tno" id="tno"></span><span class="src" id="tsrc"></span>
+      <button class="bm" id="bmToggle"><svg class="ico"><use href="#i-bookmark"/></svg></button>
+    </div>
+    <h2 id="tTitle"></h2>
+  </div></div>
+  <div class="segwrap"><div class="seg" id="seg">
+    <button data-m="quiz" class="on">인출</button><button data-m="hint">힌트</button><button data-m="ans">정답</button>
+  </div></div>
+  <div class="pad" id="studyBody" style="padding-top:14px;padding-bottom:96px"></div>
+  <div class="pager"><div class="pager-in">
+    <button id="prevBtn"><svg class="ico" style="width:17px;transform:rotate(180deg)"><use href="#i-chev"/></svg>이전</button>
+    <div class="mid" id="pagerMid"></div>
+    <button id="nextBtn">다음<svg class="ico" style="width:17px"><use href="#i-chev"/></svg></button>
+  </div></div>
+</section>
+
+<!-- ============ 노트 ============ -->
+<section class="scr" id="s-note">
+  <div class="nb"><div class="nb-in">
+    <button class="icb" id="noteBack"><svg class="ico"><use href="#i-back"/></svg></button>
+    <div class="ttl" id="noteTitle">오답 노트</div>
+    <button class="icb" id="openSearch4"><svg class="ico"><use href="#i-search"/></svg></button>
+  </div></div>
+  <div class="pad">
+    <div class="tabs" id="noteTabs">
+      <button class="on" data-t="wrong">오답<span class="c num" id="cW"></span></button>
+      <button data-t="bm">북마크<span class="c num" id="cB"></span></button>
+      <button data-t="pair">혼동 짝<span class="c num" id="cP"></span></button>
+    </div>
+    <div id="noteChips"></div>
+    <div id="noteBody" style="padding-bottom:20px"></div>
+  </div>
+</section>
+
+<!-- ============ 검색 ============ -->
+<section class="scr" id="s-search">
+  <div class="nb"><div class="nb-in">
+    <button class="icb" id="searchBack"><svg class="ico"><use href="#i-back"/></svg></button>
+    <div class="sbar" style="margin:0;flex:1"><svg class="ico"><use href="#i-search"/></svg>
+      <input id="q" type="search" inputmode="search" placeholder="토픽·키워드·숫자 검색" autocomplete="off" enterkeyhint="search"></div>
+  </div></div>
+  <div class="pad" id="qRes" style="padding-bottom:24px"></div>
+</section>
+
+<div class="sheet" id="sheet"><div class="bg" id="sheetBg"></div>
+  <div class="pan"><div class="grab"></div><div id="sheetBody"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   은또링쌤의 행성탐사대 — 학습 데이터
+   ------------------------------------------------------------
+   이 파일만 고치면 앱에 그대로 반영됩니다. (앱 코드는 건드릴 필요 없음)
+
+   구조
+     GANGS  강 번호 → 강 이름
+     CORE   홈 상단 "수능 필수" 로 띄울 강 번호
+     UNITS  강 → 대분류(rn·nm) → 중분류(nm) → 토픽 id 목록
+     TOPICS 토픽 본문
+
+   토픽 한 개의 형태
+     { id:'L17-09',              고유 ID (강번호-일련번호, 절대 중복 금지)
+       g:17,                     강 번호
+       t:'구직급여 수급 요건 4가지',   토픽 이름 (학습 화면 제목)
+       b:'law',                  출처 배지  book=교재 수록 / law=법령 확인 / note=해설 보충
+       s:'고용보험법 제46조',      근거 조문 (선택)
+       n:1,                      숫자 토픽이면 1 (선택)
+       x:['26수능 5번'],          기출 이력 (선택, 있으면 중요도 ★★★)
+       p:'L17-10',               혼동 짝 상대 토픽 id (선택, 양쪽 모두 지정)
+       k:[ '항목1', '항목2' ] }   인출할 항목들
+
+   항목 작성 규칙
+     <em>...</em>  정답 모드에서 빨간색으로 강조됩니다. 핵심 수치·용어에만 사용
+     '※ '로 시작   함정·보충 설명. 항목 수에 포함되지 않고 힌트에도 안 나옵니다
+
+   중요도 ★는 자동 계산  ★★★=기출 있음 / ★★=숫자 토픽 / ★=그 외
+   ============================================================ */
+
+const DATA_VERSION = '1.0.0';   /* 데이터를 고칠 때마다 올려 주세요 */
+
+/* ------------------------------------------------------------
+   새 강을 추가하는 방법  (예: 11강 경력 개발과 평생 학습)
+
+   1) TOPICS 배열에 토픽을 추가한다
+        {id:'L11-01', g:11, t:'평생 학습의 의미', b:'book',
+         k:['<em>학점은행제</em> — ...','<em>독학학위제</em> — ...']},
+
+   2) UNITS 에 11 키를 만들어 트리에 배치한다
+        11:[
+          {rn:'I', nm:'경력 개발', subs:[
+            {nm:'경력 개발의 의미', ids:['L11-01','L11-02']}]}],
+
+   3) 필요하면 CORE 목록을 조정한다 (홈 상단 "수능 필수" 강)
+
+   4) DATA_VERSION 을 올린다
+
+   저장 후 앱을 열면 자동으로 반영됩니다.
+   토픽 ID 중복·트리 미배치 같은 실수는 홈 화면 상단에 빨간 상자로 알려 줍니다.
+   ------------------------------------------------------------ */
+
+
+const GANGS = {
+ 1:'일과 직업 및 직업 생활', 2:'생애 발달과 직업적 성공 (1)', 3:'생애 발달과 직업적 성공 (2)',
+ 4:'기업의 종류와 형태별 특징', 5:'기업의 경영 활동', 6:'제조업과 제품 생산 활동',
+ 7:'서비스업과 서비스 생산', 8:'직업 기초 능력의 종류와 향상', 9:'전공별 직무 수행 능력 탐색 (1)',
+ 10:'전공별 직무 수행 능력 탐색 (2)', 11:'경력 개발과 평생 학습의 의미', 12:'취업과 창업 및 기업가 정신 (1)',
+ 13:'취업과 창업 및 기업가 정신 (2)', 14:'취업과 창업 및 기업가 정신 (3)', 15:'근로 관계와 법 (1)',
+ 16:'근로 관계와 법 (2)', 17:'고용 서비스와 사회 제도', 18:'산업 안전과 재해 예방',
+ 19:'협력적인 노사 관계', 20:'사회 문제와 직업 윤리 및 미래 사회와 직업 사회'
+};
+
+const TOPICS = [
+/* ─────────── 15강 근로 관계와 법 (1) ─────────── */
+{id:'L15-01',g:15,t:'근로관계법의 헌법상 근거',b:'law',s:'대한민국헌법 제32·33조',k:[
+ '근로의 권리 — <em>헌법 제32조 제1항</em>','근로 조건의 법정주의 — <em>제32조 제3·4·5항</em>','근로자의 단결 활동권 보장 — <em>제33조</em>']},
+{id:'L15-02',g:15,t:'근로 3권',b:'book',x:['근로 3권 빈출'],k:[
+ '<em>단결권</em> — 자주적으로 노동조합·단결체를 조직·가입·운영','<em>단체 교섭권</em> — 대표를 선정해 대등한 입장에서 교섭, 사용자는 성실히 응할 의무',
+ '<em>단체 행동권</em> — 주장 관철을 위한 동일 행동(서명 운동·집회·파업)','공무원은 단결권·단체 교섭권만 일정 부분 인정, <em>단체 행동권은 불인정</em>']},
+{id:'L15-03',g:15,t:'근로자의 의무 5가지',b:'book',p:'L15-04',k:[
+ '근로 제공','근로 충실','청렴','영업 비밀 유지','이중 취업 금지']},
+{id:'L15-04',g:15,t:'사용자의 의무 5가지',b:'book',p:'L15-03',k:[
+ '안전 배려','균등 대우','법령·규칙 게시','임금 지급','기능 습득자 보호']},
+{id:'L15-05',g:15,t:'개별적 근로관계법의 종류',b:'book',p:'L15-06',k:[
+ '근로기준법','최저임금법','산업안전보건법','기간제 및 단시간 근로자 보호법','직업안정법','직업교육훈련촉진법','고용보험법']},
+{id:'L15-06',g:15,t:'집단적 근로관계법의 종류',b:'book',p:'L15-05',k:[
+ '노동조합 및 노동관계조정법','노동위원회법','근로자참여 및 협력증진에 관한 법률','경제사회노동위원회법']},
+{id:'L15-07',g:15,t:'근로기준법의 기본 원리 9가지',b:'book',k:[
+ '근로 조건의 기준 — 최저 기준 준수','근로 조건의 결정 — 노사 동등·자유의사','근로 조건의 준수','균등한 처우','강제 근로의 금지',
+ '폭행의 금지','중간 착취의 배제','공민권 행사 보장','직장 내 괴롭힘 금지']},
+{id:'L15-08',g:15,t:'근로기준법 적용 범위와 5인 미만 예외',b:'book',n:1,x:['25수능 6번'],k:[
+ '상시 <em>5인 이상</em> 사업장에 전면 적용','5인 미만 미적용 — 연차 유급휴가·연차수당','5인 미만 미적용 — 생리휴가',
+ '5인 미만 미적용 — 가산수당(연장·야간·휴일)','5인 미만 미적용 — 휴업수당','5인 미만 미적용 — 해고 서면 통지',
+ '※ 5인 미만도 적용 — 최저임금·법정 근로시간·해고 예고']},
+{id:'L15-09',g:15,t:'법정 근로 시간과 연장 한도',b:'book',n:1,x:['25수능','25·9월 모평'],k:[
+ '성인(만 18세 이상) 1일 <em>8시간</em> · 1주 <em>40시간</em>','연소(만 15~18세 미만) 1일 <em>7시간</em> · 1주 <em>35시간</em>',
+ '성인 연장 한도 1주 <em>12시간</em> → 최장 <em>52시간</em>','연소 연장 한도 1일 1시간 · 1주 <em>5시간</em> → 최장 <em>40시간</em>',
+ '※ 함정 — 성인 55시간 ✕, 연소 1주 12시간 ✕']},
+{id:'L15-10',g:15,t:'가산수당 · 야간 · 휴게 시간',b:'book',n:1,k:[
+ '연장·야간·휴일 근로 각각 통상임금 <em>50%</em> 가산(중복 시 합산)','야간 = 밤 <em>10시</em> ~ 다음 날 오전 <em>6시</em>',
+ '휴게 — 4시간이면 <em>30분</em> 이상, 8시간이면 <em>1시간</em> 이상','휴게 시간은 근로시간에 미포함 = <em>무급</em>']},
+{id:'L15-11',g:15,t:'최저임금과 수습 감액',b:'book',n:1,k:[
+ '수습 시작 <em>3개월</em> 이내','단순노무직이 <em>아닌</em> 근로자만 해당','최저임금의 <em>90%</em>까지 감액 가능',
+ '최저임금위원회(고용노동부 산하)가 결정, 매년 <em>1월 1일</em> 적용']},
+{id:'L15-12',g:15,t:'해고 예고와 퇴직금',b:'book',n:1,k:[
+ '해고 예고 — <em>30일</em> 전 사유·시기 서면 통지','퇴직금 — 계속근로 <em>1년 이상</em> + 주 <em>15시간</em> 이상',
+ '1년당 평균임금 <em>30일분</em>','퇴사일부터 <em>14일</em> 이내 지급','※ 자진사직도 통상 30일 전 통보']},
+{id:'L15-13',g:15,t:'임금 지급의 4원칙',b:'book',k:[
+ '<em>통화불</em> — 현금으로 지급(현물·상품권 ✕)','<em>직접불</em> — 근로자 본인에게(대리 수령 ✕)',
+ '<em>전액불</em> — 전액 지급(법령·단협 외 임의 공제 ✕)','<em>정기불</em> — 매월 1회 이상 일정한 날']},
+{id:'L15-14',g:15,t:'평균임금 — 정의와 쓰임',b:'book',p:'L15-15',k:[
+ '산정 사유 발생일 이전 <em>3개월</em> 임금 총액 ÷ 그 기간의 총일수','퇴직금','휴업수당','연차수당','재해보상금']},
+{id:'L15-15',g:15,t:'통상임금 — 정의와 쓰임',b:'book',p:'L15-14',k:[
+ '정기적·일률적으로 지급하기로 정한 시간급·일급·월급 등','해고예고수당','연장근로수당','야간근로수당','휴일근로수당']},
+{id:'L15-16',g:15,t:'노동 쟁의 조정 3종',b:'book',x:['25수능 8번'],p:'L19-10',k:[
+ '<em>조정</em> — 노동위원회 조정위원회가 조정안 제시·수락 권고, <em>구속력 없음</em>',
+ '<em>중재</em> — 쌍방 신청 또는 단협에 의한 일방 신청, <em>구속력 있음</em>(지노위 불복 시 중노위 재심)',
+ '<em>긴급 조정</em> — 국민 경제에 큰 영향 시 고용노동부 장관 결정, 중앙노동위원회, 즉시 쟁의 중지']},
+{id:'L15-17',g:15,t:'쟁의 행위의 결정 절차',b:'book',n:1,k:[
+ '조합원 <em>과반수</em>의 찬성으로 결정·실시','직접·비밀·무기명 투표']},
+{id:'L15-18',g:15,t:'그 밖의 근로관계법과 목적',b:'book',k:[
+ '최저임금법 — 임금의 최저 수준 보장, 생활 안정·노동력 질적 향상','직업안정법 — 취업 기회 제공, 노동력 수급 지원',
+ '산업재해보상보험법 — 업무상 재해 신속·공정 보상, 재활·사회 복귀','남녀고용평등·일가정양립지원법 — 고용상 남녀평등, 모성 보호',
+ '고용보험법 — 실업 예방·고용 촉진·직업 능력 개발','직업교육훈련촉진법 — 직업교육훈련 기회 제공(현장 실습)']},
+
+/* ─────────── 16강 근로 관계와 법 (2) ─────────── */
+{id:'L16-01',g:16,t:'근로계약서 서면 명시 사항',b:'law',s:'근로기준법 제17조',k:[
+ '<em>임금</em>(구성 항목·계산 방법·지급 방법)','<em>소정근로시간</em>','<em>휴일</em>(주휴일)','<em>연차 유급휴가</em>',
+ '취업의 장소와 종사할 업무','※ 앞의 4종은 서면 명시 <em>+ 교부</em> 의무(요구 없어도 교부)']},
+{id:'L16-02',g:16,t:'근로계약서 위반 조항의 효력',b:'book',k:[
+ '계약 전체가 아니라 <em>위배된 해당 조항만</em> 무효','나머지 부분은 그대로 유효','무효가 된 부분은 근로기준법 기준을 적용']},
+{id:'L16-03',g:16,t:'사용자의 금지 3원칙',b:'book',k:[
+ '<em>위약 예정의 금지</em> — 불이행에 대한 위약금·손해배상액 예정 계약 ✕',
+ '<em>전차금 상계의 금지</em> — 미리 빌려준 돈(전대 채권)을 임금에서 상계 ✕',
+ '<em>강제 저금의 금지</em> — 근로계약에 부수한 강제 저축·저축금 관리 규정 ✕']},
+{id:'L16-04',g:16,t:'현장 실습 표준 협약 (특성화고 직결)',b:'book',n:1,k:[
+ '현장 실습 시 <em>현장 실습 표준 협약</em> 체결','채용 전환 시 <em>근로계약서</em> 작성',
+ '학년 수업일수의 <em>3분의 2</em> 출석 이후 채용 전환 가능','현장 실습생은 연소 근로 기준 적용 · 야간·휴일 실습 불가']},
+{id:'L16-05',g:16,t:'연소자 취업 연령 제한',b:'book',n:1,k:[
+ '만 <em>15세 미만</em>은 원칙적으로 근로계약 체결 불가','고용노동부 장관의 <em>취직인허증</em>을 받으면 가능',
+ '<em>13세 미만</em>은 원칙적으로 발급 불가','<em>예술 공연</em> 참가자는 13세 미만도 예외적 허용']},
+{id:'L16-06',g:16,t:'연소자 고용 시 사업장 비치 서류',b:'book',k:[
+ '연령을 증명하는 <em>가족관계기록사항에 관한 증명서</em>','친권자 또는 후견인의 <em>동의서</em>',
+ '18세 미만은 도덕상·보건상 유해·위험 사업에 사용 불가']},
+{id:'L16-07',g:16,t:'연소자의 근로 시간과 야간·휴일 근로',b:'book',n:1,x:['실전 4번 함정'],k:[
+ '1일 <em>7시간</em> · 1주 <em>35시간</em>','연장 한도 1일 1시간 · 1주 <em>5시간</em>(당사자 합의)',
+ '야간(22~06시)·휴일 근로 원칙 금지','본인 <em>동의</em> + 고용노동부 장관 <em>인가</em>가 모두 필요',
+ '※ 함정 — ‘동의만으로 가능’은 ✕ (임산부는 명시적 청구)']},
+{id:'L16-08',g:16,t:'미성년자 근로계약의 특칙',b:'law',s:'근로기준법 제67·68조',k:[
+ '친권자·후견인이 <em>대리 체결 불가</em>','법정 대리인의 동의를 얻어 본인이 직접 체결',
+ '불리한 계약은 친권자·후견인뿐 아니라 <em>고용노동부 장관</em>도 해지 가능','※ 미성년자는 임금을 독자적으로 청구 가능']},
+{id:'L16-09',g:16,t:'부당 해고 등의 구제 절차',b:'book',n:1,p:'L16-10',k:[
+ '1차 — <em>3개월</em> 이내 지방노동위원회 구제 신청','2차 — 불복 <em>10일</em> 이내 중앙노동위원회 재심',
+ '3차 — 불복 <em>15일</em> 이내 행정법원 행정 소송','행정소송 피고 = <em>중앙노동위원회 위원장</em>',
+ '해고 무효 확인은 <em>민사</em> 소송으로 별도 청구','※ 부당 노동 행위도 같은 절차']},
+{id:'L16-10',g:16,t:'차별의 시정',b:'book',n:1,p:'L16-09',k:[
+ '대상 — 기간제·단시간·<em>파견</em> 근로자','차별적 처우 종료일부터 <em>6개월</em> 이내 신청',
+ '차별이 없었음의 증명 책임은 <em>사용자</em>','비교 대상 — 무기계약·전일제·직접고용 근로자']},
+{id:'L16-11',g:16,t:'임금 체불과 권익 침해',b:'book',n:1,k:[
+ '정기 지급일을 <em>1일</em>이라도 초과','퇴직 후 <em>14일</em> 이내 금품 미지급','임금 채권 소멸시효 <em>3년</em>',
+ '고용노동부 진정 + 체불액이 소액이면 법원에 <em>소액</em> 심판 청구','직장 내 성희롱은 남녀고용평등법 — 동성 간·사업장 밖도 성립']},
+{id:'L16-12',g:16,t:'기간제 근로자와 무기계약 전환',b:'law',s:'기간제법 제4조',n:1,k:[
+ '<em>2년</em> 초과 사용 시 무기계약 근로자로 간주(법에 의해 자동)','예외 — 상시 <em>5인 미만</em> 사업장',
+ '예외 — 초단시간(주 15시간 미만)','예외 — 사업 완성·결원 대체·전문직·만 <em>55세 이상</em> 고령자','※ 반복 갱신·재입사도 계속근로 총기간을 합산']},
+{id:'L16-13',g:16,t:'초단시간 근로자',b:'book',n:1,k:[
+ '주 평균 소정근로시간 <em>15시간 미만</em>','적용 제외 — 주휴일·주휴수당','적용 제외 — 연차 유급휴가',
+ '적용 제외 — 퇴직금','※ 최저임금·근로계약서 작성·산재보험은 그대로 적용']},
+{id:'L16-14',g:16,t:'간접 고용 3종 — 파견·도급·용역',b:'book',k:[
+ '<em>파견</em> — 사용사업주가 지휘·명령, 파견사업주가 고용계약 체결','<em>도급</em> — 일의 완성에 보수, 도급인(원청)은 지휘·명령 불가',
+ '<em>용역</em> — 도급과 유사하나 인적 서비스에 한정(청소·경비·시설관리)','※ 도급에서 고용계약 주체는 <em>수급인</em>','※ 파견 2년 초과 시 사용사업주 직접 고용 의무']},
+
+/* ─────────── 17강 고용 서비스와 사회 제도 ─────────── */
+{id:'L17-01',g:17,t:'고용 서비스의 의미',b:'law',s:'직업안정법 제2조의2',k:[
+ '근거 법률 — <em>직업안정법</em>','고용 정보의 제공','<em>직업 소개</em> — 구인·구직을 연결·알선',
+ '<em>직업 지도</em> — 적성 검사·정보 제공·상담·실습 권유','직업 능력 개발 등 고용을 지원하는 서비스']},
+{id:'L17-02',g:17,t:'공공 vs 민간 고용 서비스',b:'book',p:'L17-03',k:[
+ '<em>공공</em> — 국가·지방자치단체 주체','공공 대표 — 고용센터, 지자체 일자리센터, 워크넷·고용24',
+ '<em>민간</em> — 민간 전문 기관 주체','민간 대표 — 취업 알선, 인재 파견, 직업 훈련 업체',
+ '※ 공공은 교육·노동·복지 정책 전달 / 민간은 전문성·신속성, 유료 가능']},
+{id:'L17-03',g:17,t:'고용센터의 취업·채용 지원 사업',b:'book',p:'L17-02',k:[
+ '국민 <em>내일배움카드</em>제','<em>외국인</em> 채용 지원','<em>고용24</em> — 통합 고용 서비스 포털',
+ '<em>워크넷</em> — 대표 구인·구직 정보망','<em>집단</em> 직업 상담']},
+{id:'L17-04',g:17,t:'고용보험의 목적',b:'law',s:'고용보험법 제1조',k:[
+ '<em>실업의 예방</em>','고용의 촉진','근로자의 직업 능력 개발·향상','실업 시 급여 실시 → 생활 안정·구직 활동 촉진']},
+{id:'L17-05',g:17,t:'고용보험 적용 제외 근로자',b:'law',s:'고용보험법 제10조',n:1,x:['27·6월 15번'],k:[
+ '1개월 소정근로시간 <em>60시간</em> 미만 또는 1주 <em>15시간</em> 미만','단, 3개월 이상 계속 근로자·일용근로자는 적용 대상',
+ '<em>공무원</em>(별정직·임기제는 임용일부터 3개월 이내 신청 시 임의가입)','<em>65세</em> 이후 새로 고용된 자 — 실업급여·육아휴직급여 미적용',
+ '사립학교교직원연금법 적용자, 별정우체국 직원','※ 논리 — 연금이 따로 있으면 고용보험은 빠진다(중복 보호 방지)']},
+{id:'L17-06',g:17,t:'고용보험 가입 절차와 기한',b:'book',n:1,k:[
+ '보험 관계 성립일부터 <em>14일</em> 이내 <em>근로복지공단</em>에 신고',
+ '자격 취득 신고 — 고용한 날이 속하는 달의 <em>다음 달 15일</em>까지','※ 근로자 유형(일용·상용·시간제)과 무관하게 채용일부터 당연 적용']},
+{id:'L17-07',g:17,t:'고용보험 제도의 종류',b:'book',k:[
+ '① 고용 안정 · <em>직업 능력 개발</em> 사업','② <em>실업급여</em> 사업 = 구직급여 + 취업 촉진 수당',
+ '③ <em>육아휴직 급여</em> 및 <em>출산전후휴가 급여</em>']},
+{id:'L17-08',g:17,t:'고용보험료율',b:'book',n:1,k:[
+ '실업급여 — 근로자 <em>0.9%</em> + 사업주 <em>0.9%</em> (절반씩)','고용안정·직업능력개발 — <em>사업주만</em> 규모별 차등 부담',
+ '150인 미만(우선지원대상) 0.25%','1,000인 이상·국가·지자체 0.85%','※ 함정 — 두 사업의 부담 주체를 섞지 말 것']},
+{id:'L17-09',g:17,t:'구직급여 수급 요건 4가지',b:'book',n:1,x:['26수능 5번','25·6월 15번'],k:[
+ '① 이직일 이전 <em>18개월</em> 중 피보험 단위 기간 통산 <em>180일</em> 이상',
+ '② 폐업·감원·구조조정 등 <em>비자발적</em> 사유로 실직','③ 근로의 의사와 능력이 있음에도 취업하지 못한 실업 상태',
+ '④ 재취업을 위한 적극적 노력','※ 제외 — 자발적 사직, 본인의 중대한 귀책사유로 인한 해고']},
+{id:'L17-10',g:17,t:'구직급여일액과 수급 기간',b:'law',s:'고용보험법 제46조',n:1,x:['26·6월 19번'],k:[
+ '구직급여일액 = 기초일액 × <em>60%</em>','기초일액 = 이직 전 <em>3개월</em> 평균임금 ÷ 총일수',
+ '임금일액 상한 <em>11만 3,500원</em> → 일일 상한 6만 8,100원','수급 기간 — 이직일 다음 날부터 <em>12개월</em> 이내',
+ '※ 2027 교재에서 상한이 11만 원 → 11만 3,500원으로 인상']},
+{id:'L17-11',g:17,t:'구직급여의 소정 급여 일수',b:'book',n:1,k:[
+ '기준 — 피보험 기간 + 이직일 현재 연령','50세 미만 — 120 · 150 · 180 · 210 · <em>240</em>일',
+ '50세 이상·장애인 — 120 · 180 · 210 · 240 · <em>270</em>일','1년 미만은 연령 무관 <em>120일</em>',
+ '자영업자 — 연령 구분 없음, 1년 미만 수급 불가, 최대 <em>210일</em>']},
+{id:'L17-12',g:17,t:'연장급여와 상병급여',b:'book',k:[
+ '<em>훈련</em> 연장 급여','<em>개별</em> 연장 급여','<em>특별</em> 연장 급여','<em>상병</em> 급여 — 질병·부상으로 구직활동이 어려울 때']},
+{id:'L17-13',g:17,t:'취업 촉진 수당 4가지',b:'book',n:1,k:[
+ '<em>조기 재취업 수당</em> — 남은 소정 급여 일수의 <em>2분의 1</em>','<em>직업 능력 개발 수당</em>',
+ '<em>광역 구직 활동비</em>','<em>이주비</em>']},
+{id:'L17-14',g:17,t:'모성 보호 급여 — 육아·출산',b:'law',s:'남녀고용평등법·근로기준법',n:1,x:['기출 2회'],k:[
+ '육아휴직 급여 — <em>30일 이상</em> 부여 + 시작일 이전 피보험 단위 기간 <em>180일</em> 이상',
+ '육아휴직 — 만 <em>8세</em> 이하 또는 초등 <em>2학년</em> 이하 자녀','육아기 근로시간 단축 — 만 <em>12세</em> 이하 또는 초등 <em>6학년</em> 이하',
+ '출산전후휴가 <em>90일</em>(다태아 120일), 출산 후 <em>45일</em> 이상','출산전후휴가 급여 기준일은 휴가가 <em>끝난 날</em> 이전 — ‘시작일’ 아님']},
+{id:'L17-15',g:17,t:'우선 지원 대상 기업',b:'book',n:1,k:[
+ '상시 사용하는 <em>근로자 수</em>를 기준으로 판정','제조업 <em>500명</em> 이하',
+ '광업·건설업·운수및창고업·정보통신업 등 <em>300명</em> 이하','그 밖에 200명 이하 · 100명 이하 업종']},
+{id:'L17-16',g:17,t:'도급 사업의 보험 가입자',b:'book',n:1,k:[
+ '원칙 — <em>원수급인</em>을 사업주로 봄','하수급인 인정 — 서면 계약 + 착공일부터 <em>30일</em> 이내 승인 신청',
+ '보험 관계 성립 신고는 <em>14일</em> 이내 — 30일과 혼동 주의']},
+{id:'L17-17',g:17,t:'부정수급',b:'book',k:[
+ '거짓이나 그 밖의 부정한 방법으로 급여를 받은 경우','지급 제한 + 반환 명령','추가 징수','자진 신고 시 감면 가능']},
+
+/* ─────────── 18강 산업 안전과 재해 예방 ─────────── */
+{id:'L18-01',g:18,t:'안전사고의 직접적 원인',b:'book',p:'L18-02',k:[
+ '<em>불안전한 행동</em>(인적 원인) — 위험 장소 접근, 안전장치 기능 제거, 보호구 미착용, 기계의 잘못된 사용',
+ '<em>불안전한 상태</em>(물적 원인) — 설비 결함, 작업 장소 불량, 작업 환경 결함, 안전 방호 장치 결함']},
+{id:'L18-02',g:18,t:'안전사고의 간접적 원인 3가지',b:'book',p:'L18-01',k:[
+ '<em>기술적</em> 원인 — 생산 공정·구조·재료 부적합, 설계 불량','<em>교육적</em> 원인 — 안전 의식 부족, 경험·훈련 미숙, 안전 교육 불충분',
+ '<em>관리적</em> 원인 — 작업 준비 불충분, 작업 지시 부적합, 안전 관리 조직 결함']},
+{id:'L18-03',g:18,t:'재해 발생 형태(사고의 종류)',b:'book',k:[
+ '<em>떨어짐</em> — 높은 장소에서 인력(중력)에 의해','<em>넘어짐</em> — 평면·경사면·층계에서 구르거나 넘어짐',
+ '<em>깔림·뒤집힘</em> — 물체가 쓰러져 깔림, 지게차 등이 뒤집힘','<em>부딪힘·접촉</em> — 자신의 움직임으로 접촉, 고정부에서 이탈하지 않은 물체',
+ '<em>맞음</em> — 고정되어 있던 물체가 고정부에서 이탈해 가해','<em>끼임</em> — 두 물체 사이, 회전부와 고정체 사이',
+ '<em>무너짐</em> — 구조물·적재물이 전체적으로 허물어짐','<em>신체 반작용</em> — 일시적·급격한 동작, 균형 상실, 정신적 충격',
+ '<em>감전</em> — 충전부 접촉, 심실세동 등','※ 화재 — 방화도 관리 불가하므로 화재에 포함']},
+{id:'L18-04',g:18,t:'하인리히의 재해 예방 4원칙',b:'book',p:'L18-05',k:[
+ '<em>손실 우연</em>의 원칙 — 손실 정도는 우연히 결정되므로 사전 예방이 중요',
+ '<em>원인 계기(연계)</em>의 원칙 — 여러 원인이 복합 연계, 직접 원인은 간접 원인에서 발생',
+ '<em>예방 가능</em>의 원칙 — 사전 예방 대책에 중점, 요인 제거로 예방 가능',
+ '<em>대책 선정</em>의 원칙 — 원인별 대책을 적절히 선택, 종합적 연계 대책']},
+{id:'L18-05',g:18,t:'사고 예방 대책 5단계',b:'book',p:'L18-04',k:[
+ '1단계 <em>안전 관리 조직</em> — 가장 먼저, 방침·계획 수립','2단계 <em>사실의 발견</em> — 기록 검토, 안전 점검·사고 조사·관찰 보고',
+ '3단계 <em>평가·분석</em> — 직접 원인과 간접 원인 규명','4단계 <em>시정책의 선정</em> — 기술적 개선·교육 훈련 방법 개선',
+ '5단계 <em>시정책의 적용</em> — 목표 설정·실시·결과 재평가']},
+{id:'L18-06',g:18,t:'하인리히 도미노 이론 5단계',b:'book',n:1,k:[
+ '① 사회적 환경 및 유전적 요소','② 개인적 결함','③ <em>불안전한 행동 및 상태</em> ← 직접 원인',
+ '④ 사고','⑤ 재해','※ 도미노 하나를 없애면 연쇄성이 중단',
+ '사고의 <em>98%</em>는 예방 가능 / 불안전한 행동 88% · 상태 10% · 불가항력 2%']},
+{id:'L18-07',g:18,t:'안전 보건 표지 4종',b:'law',s:'산업안전보건법 시행규칙 별표 6',k:[
+ '<em>금지</em> — 흰색 바탕 + <em>빨간색</em> 원과 45° 사선, 내용은 검은색',
+ '<em>경고</em> — <em>노란색</em> 바탕 + 검은색 삼각 테(위험 물질은 무색 바탕 + 붉은색 마름모)',
+ '<em>지시</em> — <em>파란색</em> 원형, 보호구 착용 지시, 내용은 흰색',
+ '<em>안내</em> — <em>녹색</em> 바탕 정방형·장방형, 구명·구호·피난 방향']},
+{id:'L18-08',g:18,t:'업무상 재해 3분류',b:'law',s:'산업재해보상보험법 제37조',k:[
+ '<em>업무상 사고</em> — 업무 수행 중, 사업주 제공 시설물 결함, 사업주 주관 행사, 휴게 시간 중 지배·관리하의 행위',
+ '<em>업무상 질병</em> — 유해 인자 노출, 업무상 부상이 원인, 직장 내 괴롭힘·고객 폭언에 의한 정신적 스트레스',
+ '<em>출퇴근 재해</em> — 사업주 제공 교통수단 이용 중, 통상적인 경로와 방법으로 출퇴근 중',
+ '※ 노동자의 <em>고의·자해</em>로 인한 경우는 인정 ✕']},
+{id:'L18-09',g:18,t:'산업 재해 처리와 인정 기준',b:'book',n:1,k:[
+ '근로자 <em>1인 이상</em> 사업장 모두 적용, 보험료는 <em>사업주 전액</em> 부담',
+ '<em>3일</em>을 초과하는 요양이 필요한 경우 보상','산재보험 가입 여부와 상관없이 보상 가능',
+ '<em>본인의 실수</em>로 다쳐도 보상 대상','요양 급여 신청서 → 회사 확인 → <em>근로복지공단</em> 제출']},
+{id:'L18-10',g:18,t:'산업 재해 보상 급여 8종',b:'book',x:['최다 출제'],k:[
+ '<em>요양 급여</em> — 3일 초과 요양 시 치료비','<em>휴업 급여</em> — 취업하지 못한 기간의 임금 보전',
+ '<em>장해 급여</em> — 치유 후 장해가 남은 경우','<em>간병 급여</em> — 치유 후 실제로 간병을 받는 경우',
+ '<em>유족 급여</em> — 사망하거나 사망 추정 시','<em>상병 보상 연금</em> — 장기 요양 + 중증',
+ '<em>장례비</em>','<em>직업 재활 급여</em> — 직업 훈련·직장 복귀 지원']},
+{id:'L18-11',g:18,t:'산재 급여의 핵심 숫자',b:'book',n:1,k:[
+ '휴업 급여 — 1일 평균임금의 <em>70%</em>, 취업 못한 기간이 <em>3일 이내</em>면 미지급',
+ '상병 보상 연금 — 요양 시작 <em>2년</em> 경과 + 1~3급 중증 + 미취업(휴업 급여 대신 지급)',
+ '장례비 — 평균임금 <em>120일분</em>','장해 등급 — 제1급 ~ 제<em>14급</em>',
+ '※ 요양·휴업 급여는 청구 후 <em>7일</em> 이내 지급 여부 통보']},
+{id:'L18-12',g:18,t:'특별 급여 2종',b:'book',k:[
+ '<em>장해 특별 급여</em> — 사업주의 고의·과실 + 1~3급 장해','<em>유족 특별 급여</em> — 사업주의 고의·과실 + 사망 + 합의한 경우',
+ '민법에 따른 손해 배상 청구를 <em>갈음</em>하여 지급','※ 장해 급여 ‘대신’이 아니라 함께 받는 ‘덤’']},
+{id:'L18-13',g:18,t:'중대 재해의 기준',b:'law',s:'산업안전보건법',n:1,k:[
+ '사망자가 <em>1명 이상</em> 발생','<em>3개월 이상</em> 요양이 필요한 부상자가 동시에 <em>2명 이상</em>',
+ '부상자 또는 직업성 질병자가 동시에 <em>10명 이상</em>','※ 중대재해처벌법의 ‘중대’는 기준이 다름 — 혼동 주의']},
+
+/* ─────────── 19강 협력적인 노사 관계 ─────────── */
+{id:'L19-01',g:19,t:'노사 관계의 의미와 구분',b:'book',k:[
+ '<em>근로자</em> — 노동력을 제공해 임금을 받는 자','<em>사용자</em> — 노동력의 수요자',
+ '<em>개별적</em> 노사 관계 — 근로자와 사용자가 일대일','<em>집단적</em> 노사 관계 — 근로자 단체와 사용자(단체)']},
+{id:'L19-02',g:19,t:'노사 관계의 세 주체',b:'book',k:[
+ '<em>정부</em> — 조정권(알선·조정·중재), 중립 조정자','<em>근로자</em> — 노동 3권','<em>사용자</em> — 경영권(관리권·인사권)']},
+{id:'L19-03',g:19,t:'노사 관계의 4원칙',b:'book',k:[
+ '<em>노사 대등</em>의 원칙 — 평등 관계, 단체 교섭 진지 수용','<em>상호 불개입</em>의 원칙 — 독립된 존재, 조직·운영에 개입 불가',
+ '<em>노사 자치</em>의 원칙 — 단체 교섭 → 단체 협약으로 자치 규범 형성','<em>상호 이해</em>의 원칙 — 협력·조화로 생산성 향상',
+ '※ 함정 — ‘독립 보장’은 상호 불개입 / ‘생산성·협력’은 상호 이해']},
+{id:'L19-04',g:19,t:'노사 관계의 양면성',b:'book',k:[
+ '이윤 창출(생산) — <em>협력적</em> ↔ 분배 — <em>대립적</em>','개별 고용 계약 — 개별적 ↔ 단체 협약 — 집단적',
+ '생산 시 지휘·명령에 따르는 <em>종속</em> ↔ 교섭 시 <em>대등</em>']},
+{id:'L19-05',g:19,t:'노동조합의 종류 4가지',b:'book',k:[
+ '<em>직업별</em> — 동일 직업·직종(전국교직원노동조합)','<em>산업별</em> — 동일 산업(전국금속산업노동조합)',
+ '<em>기업별</em> — 동일 기업(직장별)','<em>일반</em> — 기업·산업 무관, 폭넓게(청년 유니온)']},
+{id:'L19-06',g:19,t:'노동조합의 설립과 기관',b:'book',p:'L19-13',k:[
+ '우리나라는 <em>신고주의</em> 채택 — ‘허가’가 아님','설립 신고서와 규약을 행정 관청에 제출 → 신고증 교부',
+ '<em>결의</em> 기관 — 총회와 대의원 회의','<em>집행</em> 기관 — 위원장·부위원장·사무국장','<em>감사</em> 기관 — 재정·경리 감시']},
+{id:'L19-07',g:19,t:'노동조합의 책임',b:'book',k:[
+ '<em>기본</em> 책임(목적) — 단체 교섭으로 근로 조건 개선','<em>집행</em> 책임(실행·핵심) — 단체 협약 체결·경제 활동·정치 활동',
+ '<em>참모</em> 책임(보조) — 교육 선전·조사 연구·사회사업','전통적 분류 — 경제적·공제적·정치적 책임']},
+{id:'L19-08',g:19,t:'부당 노동 행위',b:'book',n:1,k:[
+ '주체는 언제나 <em>사용자</em> — 근로자·노조는 주체가 될 수 없음','<em>불이익 대우</em> — 노조 가입·조직·활동을 이유로 해고·전보·감봉',
+ '<em>단체 교섭 거부·해태</em> — 정당한 이유 없이','<em>지배·개입</em> — 조직·운영 지배, 운영비(경비) 원조 포함',
+ '노동위원회에 구제 신청 <em>3개월</em> 이내']},
+{id:'L19-09',g:19,t:'사용자 단체 (경제 5단체)',b:'book',k:[
+ '<em>한국경영자총협회</em>(경총) — 1970년 노사 문제 담당 설립','한국경제인협회 — 민간 경제인 단체',
+ '대한상공회의소 — 종합 경제 단체','한국무역협회 — 무역 진흥 단체','<em>중소기업중앙회</em> — 중소기업 이익 대변']},
+{id:'L19-10',g:19,t:'노동위원회와 쟁의 조정',b:'book',n:1,p:'L15-16',k:[
+ '<em>조정</em> — 일방 신청 가능, 일반 <em>10일</em>·공익사업 <em>15일</em>, 조정안 권고',
+ '<em>중재</em> — 쌍방 또는 단협상 일방 신청, 재정은 <em>단체 협약</em>과 같은 효력',
+ '<em>긴급 조정</em> — 고용노동부 장관 결정, <em>30일</em>간 쟁의 재개 불가',
+ '구성 — 근로자·사용자·공익 위원 3자(노사 <em>동수</em>)','※ 종류 — 중앙·지방·특별노동위원회']},
+{id:'L19-11',g:19,t:'노사 관계와 노사 문화의 방향',b:'book',k:[
+ '<em>노사 관계</em> — 제도·법 → 관행 → 의식(제도적인 부분이 강함)','<em>노사 문화</em> — 의식 → 관행 → 제도·법(의식이 더 강함)']},
+{id:'L19-12',g:19,t:'상생의 노사 문화 5유형',b:'book',k:[
+ '<em>생산적</em> — 주인 의식, 수익 창출, 기술 개발, 작업 환경 개선','<em>협력적</em> — 공동 목표 설정, 신뢰와 타협, 사회적 책임, 대타협',
+ '<em>합법적</em> — 법적 테두리 내 교섭·협약·쟁의, 부당 해고·부당 노동 행위 근절','<em>소통</em> — 노사 간담회·노사 협의회, 역지사지',
+ '<em>윤리적</em> — 직장 내 차별 철폐, 사회적 약자 배려, 나눔과 봉사']},
+{id:'L19-13',g:19,t:'노사 협의회',b:'law',s:'근로자참여 및 협력증진에 관한 법률',n:1,p:'L19-06',k:[
+ '근거법 — <em>근로자참여 및 협력증진에 관한 법률</em>','근로 조건 결정권이 있는 상시 <em>30명 이상</em> 사업(장)에 설치',
+ '노조 유무와 무관하게 <em>전체 근로자</em>를 대표','단체 교섭권 <em>✕</em> · 단체 행동권 <em>✕</em> · 단체 협약 체결 <em>✕</em>',
+ '※ 협의·의견 제시만 가능(경영에 참조)']},
+{id:'L19-14',g:19,t:'경영 참가제',b:'book',k:[
+ '근로자가 기업 경영에 참여 → 산업 민주주의 실현','협력적 노사 문화 형성에 이바지',
+ '<em>직접</em> 참가','<em>간접</em> 참가 — 이익 참가','<em>간접</em> 참가 — 자본 참가']}
+];
+
+/* ============================================================
+   4층 트리 : 강 → 대분류(I·II·III) → 중분류(1·2·3) → 토픽
+   교재 소제목 체계를 그대로 따름
+   ============================================================ */
+const UNITS={
+15:[
+ {rn:'I',nm:'근로관계',subs:[
+   {nm:'근로관계와 근로 3권',ids:['L15-01','L15-02']},
+   {nm:'근로자와 사용자의 의무',ids:['L15-03','L15-04']}]},
+ {rn:'II',nm:'근로관계법의 종류',subs:[
+   {nm:'개별적 · 집단적 근로관계법',ids:['L15-05','L15-06']},
+   {nm:'그 밖의 근로관계법',ids:['L15-18']}]},
+ {rn:'III',nm:'근로기준법',subs:[
+   {nm:'기본 원리와 적용 범위',ids:['L15-07','L15-08']},
+   {nm:'근로 시간',ids:['L15-09','L15-10']},
+   {nm:'임금',ids:['L15-11','L15-13','L15-14','L15-15']},
+   {nm:'해고와 퇴직',ids:['L15-12']}]},
+ {rn:'IV',nm:'노동조합 및 노동관계조정법',subs:[
+   {nm:'노동 쟁의 조정',ids:['L15-16','L15-17']}]}],
+16:[
+ {rn:'I',nm:'근로 계약서와 사용자의 금지 사항',subs:[
+   {nm:'근로 계약서',ids:['L16-01','L16-02']},
+   {nm:'사용자의 금지 사항',ids:['L16-03']},
+   {nm:'현장 실습',ids:['L16-04']}]},
+ {rn:'II',nm:'미성년자(연소자)의 근로 보호',subs:[
+   {nm:'취업 연령과 비치 서류',ids:['L16-05','L16-06']},
+   {nm:'근로 시간과 야간 · 휴일 근로',ids:['L16-07']},
+   {nm:'근로계약의 특칙',ids:['L16-08']}]},
+ {rn:'III',nm:'근로자 권익의 침해와 시정',subs:[
+   {nm:'부당 해고 등의 구제',ids:['L16-09']},
+   {nm:'임금 체불',ids:['L16-11']}]},
+ {rn:'IV',nm:'차별의 시정과 간접 고용',subs:[
+   {nm:'차별의 시정',ids:['L16-10']},
+   {nm:'비정규직 보호',ids:['L16-12','L16-13']},
+   {nm:'간접 고용',ids:['L16-14']}]}],
+17:[
+ {rn:'I',nm:'고용 서비스',subs:[
+   {nm:'고용 서비스의 의미',ids:['L17-01']},
+   {nm:'고용 서비스의 유형',ids:['L17-02']},
+   {nm:'고용센터의 지원 사업',ids:['L17-03']}]},
+ {rn:'II',nm:'고용보험의 이해',subs:[
+   {nm:'고용보험의 목적',ids:['L17-04']},
+   {nm:'적용 대상과 적용 제외',ids:['L17-05']},
+   {nm:'가입 절차와 기한',ids:['L17-06']}]},
+ {rn:'III',nm:'고용보험 제도',subs:[
+   {nm:'제도의 종류',ids:['L17-07']},
+   {nm:'고용보험료율',ids:['L17-08']},
+   {nm:'우선 지원 대상 기업과 도급',ids:['L17-15','L17-16']}]},
+ {rn:'IV',nm:'실업급여',subs:[
+   {nm:'구직급여 수급 요건',ids:['L17-09']},
+   {nm:'구직급여일액과 수급 기간',ids:['L17-10']},
+   {nm:'소정 급여 일수',ids:['L17-11']},
+   {nm:'연장급여와 상병급여',ids:['L17-12']},
+   {nm:'취업 촉진 수당',ids:['L17-13']},
+   {nm:'부정수급',ids:['L17-17']}]},
+ {rn:'V',nm:'모성 보호 급여',subs:[
+   {nm:'육아휴직 · 출산전후휴가 급여',ids:['L17-14']}]}],
+18:[
+ {rn:'I',nm:'안전사고의 유형과 원인 · 대책',subs:[
+   {nm:'직접적 원인',ids:['L18-01']},
+   {nm:'간접적 원인',ids:['L18-02']},
+   {nm:'안전 보건 표지',ids:['L18-07']}]},
+ {rn:'II',nm:'산업 재해의 분류',subs:[
+   {nm:'재해 발생 형태',ids:['L18-03']},
+   {nm:'업무상 재해의 인정',ids:['L18-08']}]},
+ {rn:'III',nm:'산업 재해의 예방',subs:[
+   {nm:'재해 예방 4원칙',ids:['L18-04']},
+   {nm:'사고 예방 대책 5단계',ids:['L18-05']},
+   {nm:'하인리히 도미노 이론',ids:['L18-06']}]},
+ {rn:'IV',nm:'산재 처리와 보상 서비스',subs:[
+   {nm:'산재 처리 절차',ids:['L18-09']},
+   {nm:'보상 급여의 종류',ids:['L18-10','L18-11']},
+   {nm:'특별 급여',ids:['L18-12']},
+   {nm:'중대 재해',ids:['L18-13']}]}],
+19:[
+ {rn:'I',nm:'노사 관계의 이해',subs:[
+   {nm:'의미와 기본 구조',ids:['L19-01','L19-02']},
+   {nm:'노사 관계의 원칙',ids:['L19-03']},
+   {nm:'노사 관계의 양면성',ids:['L19-04']}]},
+ {rn:'II',nm:'노동조합과 사용자 단체',subs:[
+   {nm:'노동조합의 종류',ids:['L19-05']},
+   {nm:'설립과 기관',ids:['L19-06']},
+   {nm:'노동조합의 책임',ids:['L19-07']},
+   {nm:'부당 노동 행위',ids:['L19-08']},
+   {nm:'사용자 단체',ids:['L19-09']},
+   {nm:'노동위원회와 쟁의 조정',ids:['L19-10']}]},
+ {rn:'III',nm:'노사 문화와 협력 제도',subs:[
+   {nm:'노사 문화의 방향',ids:['L19-11']},
+   {nm:'상생의 노사 문화',ids:['L19-12']},
+   {nm:'노사 협의회',ids:['L19-13']},
+   {nm:'경영 참가제',ids:['L19-14']}]}]
+};
+/* 수능 출제 비중 상위 5강 (홈 상단 노출) */
+const CORE=[17,18,19,15,16];
+
+/* ===================== 데이터 로드 확인 ===================== */
+if(typeof TOPICS==='undefined'||typeof UNITS==='undefined'||typeof GANGS==='undefined'){
+  document.body.innerHTML='<div style="max-width:420px;margin:80px auto;padding:26px;font-family:sans-serif;'
+   +'background:#fff;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);line-height:1.7">'
+   +'<div style="font-size:17px;font-weight:900;margin-bottom:10px">학습 데이터를 읽지 못했습니다</div>'
+   +'<div style="font-size:14px;color:#4A4F5A">파일 위쪽 <b>학습 데이터</b> 영역에 문법 오류가 있을 수 있습니다.<br>'
+   +'쉼표·따옴표·대괄호가 빠지지 않았는지 확인해 주세요.</div></div>';
+  throw new Error('data block error');
+}
+/* ===================== 데이터 자가 진단 ===================== */
+var DIAG=(function(){
+  var w=[],ids=TOPICS.map(function(t){return t.id}),placed=[];
+  ids.forEach(function(v,i){if(ids.indexOf(v)!==i)w.push('토픽 ID 중복: '+v)});
+  Object.keys(UNITS).forEach(function(g){UNITS[g].forEach(function(G){G.subs.forEach(function(S){S.ids.forEach(function(i){
+    placed.push(i);
+    if(ids.indexOf(i)<0)w.push(g+'강 트리가 없는 토픽을 가리킴: '+i);
+  })})})});
+  TOPICS.forEach(function(t){
+    if(placed.indexOf(t.id)<0)w.push('트리에 배치되지 않은 토픽: '+t.id);
+    if(!t.k||!t.k.length)w.push('항목이 비어 있음: '+t.id);
+    if(!GANGS[t.g])w.push('강 이름이 없음: '+t.id+' (g='+t.g+')');
+    if(t.p){
+      var o=TOPICS.filter(function(x){return x.id===t.p})[0];
+      if(!o)w.push(t.id+' 의 혼동 짝 대상이 없음: '+t.p);
+      else if(o.p!==t.id)w.push('혼동 짝이 한쪽만 지정됨: '+t.id+' → '+t.p);
+    }
+  });
+  return w;
+})();
+
+/* ===================== 저장 ===================== */
+const KEY='pnote.v1';
+let DB={st:{},bm:{},last:null,streak:{last:'',days:0},today:{d:'',c:0}};
+const ymd=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const TD=()=>ymd(new Date());
+try{const r=localStorage.getItem(KEY);if(r)DB=Object.assign(DB,JSON.parse(r))}catch(e){}
+if(!DB.bm)DB.bm={};
+if(DB.today.d!==TD())DB.today={d:TD(),c:0};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(DB))}catch(e){}};
+function tick(){const t=TD();if(DB.streak.last===t)return;
+  const ys=ymd(new Date(Date.now()-864e5));
+  DB.streak.days=(DB.streak.last===ys)?DB.streak.days+1:1;DB.streak.last=t;save()}
+
+/* ===================== 유틸 ===================== */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const byId=i=>TOPICS.find(t=>t.id===i);
+const plain=s=>s.replace(/<[^>]+>/g,'');
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const isAux=k=>plain(k).trim().startsWith('※');
+const stripAux=k=>k.replace('※ ','');
+const mainK=t=>t.k.filter(k=>!isAux(k));
+const G2=g=>String(g).padStart(2,'0');
+const stOf=i=>(DB.st[i]||{}).s||null;
+const isBM=i=>!!DB.bm[i];
+const gT=g=>(UNITS[g]||[]).flatMap(G=>G.subs.flatMap(S=>S.ids)).map(byId).filter(Boolean);
+const known=l=>l.filter(t=>stOf(t.id)==='know').length;
+const READY=Object.keys(UNITS).map(Number).sort((a,b)=>a-b);
+const REST=[...Array(20)].map((_,i)=>i+1).filter(g=>!CORE.includes(g));
+const wrongs=()=>TOPICS.filter(t=>['fuzzy','no'].includes(stOf(t.id)))
+  .sort((a,b)=>(stOf(a.id)==='no'?0:1)-(stOf(b.id)==='no'?0:1)||a.g-b.g);
+const bms=()=>TOPICS.filter(t=>isBM(t.id));
+const starOf=t=>(t.x&&t.x.length)?3:(t.n?2:1);
+const starHTML=n=>'★★★'.slice(0,n)+'<i>'+'★★★'.slice(0,3-n)+'</i>';
+function head(k){let s=plain(k).trim().replace(/^[\u2460-\u2473]+[.\s]*/,'').replace(/^[(\uff08\[]/,'');
+  const m=s.match(/^[0-9]+/);return (m?m[0]+(s.charAt(m[0].length)||''):s.slice(0,2)).trim()||'?'}
+function altHead(k){const t=plain(k).replace(/^[\u2460-\u2473]+[.\s]*/,'');
+  const m=t.split(/\s*[\u2014\u2013:-]\s*/);return (m.length>1&&m[1])?head(m[1]):null}
+function hintsOf(list){const o=list.map(head);
+  o.forEach((h,i)=>{if(o.filter(x=>x===h).length>1){const a=altHead(list[i]);if(a)o[i]=a}});return o}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');
+  clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),1700)}
+function buzz(n){try{navigator.vibrate&&navigator.vibrate(n)}catch(e){}}
+const BADGE={book:'교재 수록',law:'법령 확인',note:'해설 보충'};
+const GNAME=g=>GANGS[g]||(g+'강');
+/* 토픽 → 소속 대분류·중분류 찾기 */
+const PATH={};
+READY.forEach(g=>(UNITS[g]||[]).forEach((G,gi)=>G.subs.forEach((S,si)=>
+  S.ids.forEach((id,ti)=>PATH[id]={g,gi,si,ti,G,S}))));
+
+const RAD=Math.PI/180;
+/* ===================== 별자리 생성 ===================== */
+/* 강 = 별자리, 토픽 = 별. 미공개 강은 흐린 자리별로 표시 */
+const CONS=[];
+(function(){
+  const GA=137.50776;
+  for(let i=0;i<20;i++){
+    const g=i+1, list=gT(g), n=list.length||(6+((g*7)%5));
+    const y=1-(i/19)*2;
+    const lat=Math.asin(Math.max(-1,Math.min(1,y)))/RAD*0.80;
+    const lon=(i*GA)%360;
+    const stars=[];
+    for(let j=0;j<n;j++){
+      const a=(j*GA+g*53.7)*RAD, r=5.4+3.15*Math.sqrt(j);
+      const dlat=r*Math.sin(a);
+      const dlon=r*Math.cos(a)/Math.max(Math.cos((lat+dlat)*RAD),.36);
+      stars.push({lat:lat+dlat,lon:lon+dlon,id:list[j]?list[j].id:null});
+    }
+    const links=[];
+    for(let j=1;j<stars.length;j++){
+      let bi=0,bd=1e9;
+      for(let i2=0;i2<j;i2++){
+        const dy=stars[j].lat-stars[i2].lat;
+        const dx=(stars[j].lon-stars[i2].lon)*Math.cos((stars[j].lat+stars[i2].lat)/2*RAD);
+        const d=dx*dx+dy*dy; if(d<bd){bd=d;bi=i2;}
+      }
+      links.push([bi,j]);
+    }
+    CONS.push({g,lat,lon,stars,links,ready:list.length>0,n:list.length});
+  }
+})();
+const consOf=g=>CONS[g-1];
+const consLit=c=>c.stars.filter(s=>s.id&&stOf(s.id)==='know').length;
+const consDone=c=>c.ready&&consLit(c)===c.n;
+
+/* ===================== 천구 엔진 ===================== */
+const cv=$('#sky'),cx2=cv.getContext('2d');
+let rot=210, spin=.05, drag=false, lastX=0, lastY=0, vel=0, velT=0, W=0,H=0,DPR=1,RAF=0,idle=0;
+let tilt=-16*RAD;
+const TMAX=82*RAD;
+const clamp=(v,a,b)=>v<a?a:v>b?b:v;
+
+/* 공개된 별자리들이 정면에 오도록 초기 시점을 자동으로 잡는다.
+   강이 추가되면 다시 계산되므로 손댈 필요 없다. */
+let HOME_TILT=-16*RAD, HOME_ROT=210;
+function initView(){
+  const open=CONS.filter(c=>c.ready);
+  if(!open.length)return;
+  const avgLat=open.reduce((a,c)=>a+c.lat,0)/open.length;
+  HOME_TILT=clamp(avgLat*RAD*0.95,-TMAX,TMAX);
+  const sx=open.reduce((a,c)=>a+Math.cos(c.lon*RAD),0);
+  const sy=open.reduce((a,c)=>a+Math.sin(c.lon*RAD),0);
+  HOME_ROT=Math.atan2(sy,sx)/RAD;
+  tilt=HOME_TILT; rot=HOME_ROT;
+}
+initView();
+const DUST=[];for(let i=0;i<130;i++)DUST.push({x:Math.random(),y:Math.random(),r:Math.random()*1.1+.25,a:Math.random()*.5+.16});
+function fit(){
+  const r=cv.parentElement.getBoundingClientRect();
+  DPR=Math.min(window.devicePixelRatio||1,2);
+  W=r.width;H=r.height;
+  cv.width=W*DPR;cv.height=H*DPR;cx2.setTransform(DPR,0,0,DPR,0,0);
+}
+function proj(lat,lon){
+  const la=lat*RAD, lo=(lon-rot)*RAD;
+  const cl=Math.cos(la), sl=Math.sin(la), co=Math.cos(lo), so=Math.sin(lo);
+  const ct=Math.cos(tilt), st=Math.sin(tilt);
+  const x=cl*so;
+  const y=-sl*ct+cl*co*st;
+  const z= sl*st+cl*co*ct;
+  return{x,y,z};
+}
+function draw(){
+  const cxp=W/2, cyp=H/2, R=Math.min(W,H)*.435;
+  cx2.clearRect(0,0,W,H);
+  /* 배경 별먼지 */
+  DUST.forEach(d=>{cx2.globalAlpha=d.a;cx2.fillStyle='#C9D6EA';
+    cx2.beginPath();cx2.arc(d.x*W,d.y*H,d.r,0,6.284);cx2.fill()});
+  cx2.globalAlpha=1;
+  /* 구체 */
+  let g=cx2.createRadialGradient(cxp,cyp,R*.2,cxp,cyp,R*1.5);
+  g.addColorStop(0,'rgba(90,150,220,.13)');g.addColorStop(.62,'rgba(60,110,190,.05)');g.addColorStop(1,'rgba(0,0,0,0)');
+  cx2.fillStyle=g;cx2.beginPath();cx2.arc(cxp,cyp,R*1.5,0,6.284);cx2.fill();
+  g=cx2.createRadialGradient(cxp-R*.34,cyp-R*.38,R*.08,cxp,cyp,R);
+  g.addColorStop(0,'#16203180');g.addColorStop(.55,'#0C121D90');g.addColorStop(1,'#05070Ecc');
+  cx2.fillStyle=g;cx2.beginPath();cx2.arc(cxp,cyp,R,0,6.284);cx2.fill();
+  cx2.strokeStyle='rgba(150,190,240,.16)';cx2.lineWidth=1;
+  cx2.beginPath();cx2.arc(cxp,cyp,R,0,6.284);cx2.stroke();
+  /* 경위선 */
+  cx2.strokeStyle='rgba(140,180,235,.075)';cx2.lineWidth=.8;
+  for(let lo=0;lo<360;lo+=30){cx2.beginPath();let st=false;
+    for(let la=-90;la<=90;la+=4){const p=proj(la,lo);
+      if(p.z>0){const X=cxp+p.x*R,Y=cyp+p.y*R;st?cx2.lineTo(X,Y):(cx2.moveTo(X,Y),st=true);}else st=false;}
+    cx2.stroke();}
+  for(let la=-60;la<=60;la+=30){cx2.beginPath();let st=false;
+    for(let lo=0;lo<=360;lo+=4){const p=proj(la,lo);
+      if(p.z>0){const X=cxp+p.x*R,Y=cyp+p.y*R;st?cx2.lineTo(X,Y):(cx2.moveTo(X,Y),st=true);}else st=false;}
+    cx2.stroke();}
+  /* 별자리 */
+  CONS.forEach(c=>{
+    const pts=c.stars.map(s=>{const p=proj(s.lat,s.lon);return{p,s}});
+    const done=consDone(c);
+    c.links.forEach(([ia,ib])=>{
+      const a=pts[ia],b=pts[ib];
+      if(a.p.z<=.02||b.p.z<=.02)return;
+      const lit=a.s.id&&b.s.id&&stOf(a.s.id)==='know'&&stOf(b.s.id)==='know';
+      const al=Math.min(a.p.z,b.p.z);
+      cx2.strokeStyle=lit?'rgba(240,206,124,'+(.62*al)+')'
+        :(c.ready?'rgba(160,196,240,'+(.16*al)+')':'rgba(130,150,180,'+(.07*al)+')');
+      cx2.lineWidth=lit?1.5:1;
+      cx2.beginPath();cx2.moveTo(cxp+a.p.x*R,cyp+a.p.y*R);cx2.lineTo(cxp+b.p.x*R,cyp+b.p.y*R);cx2.stroke();
+    });
+    pts.forEach(({p,s})=>{
+      if(p.z<=.02)return;
+      const X=cxp+p.x*R,Y=cyp+p.y*R,al=Math.min(1,p.z*1.25);
+      const st=s.id?stOf(s.id):null;
+      if(st==='know'){
+        cx2.globalAlpha=al*.32;cx2.fillStyle='#F0CE7C';
+        cx2.beginPath();cx2.arc(X,Y,6.4,0,6.284);cx2.fill();
+        cx2.globalAlpha=al;cx2.fillStyle='#FFF0C8';
+        cx2.beginPath();cx2.arc(X,Y,2.5,0,6.284);cx2.fill();
+      }else{
+        cx2.globalAlpha=al*(c.ready?.72:.34);
+        cx2.fillStyle=st==='fuzzy'?'#F0B450':st==='no'?'#F4796B':(c.ready?'#7E8DA6':'#4A5468');
+        cx2.beginPath();cx2.arc(X,Y,st?1.9:1.5,0,6.284);cx2.fill();
+      }
+      cx2.globalAlpha=1;
+    });
+
+  });
+  placePins(cxp,cyp,R);
+}
+function placePins(cxp,cyp,R){
+  CONS.forEach(c=>{
+    const el=document.getElementById('pin'+c.g);if(!el)return;
+    const p=proj(c.lat,c.lon);
+    if(p.z<.13){el.style.display='none';return}
+    el.style.display='flex';
+    el.style.left=(cxp+p.x*R)+'px';
+    el.style.top=(cyp+p.y*R-46)+'px';
+    el.style.opacity=Math.min(1,(p.z-.13)*3.2);
+    el.style.zIndex=String(100+Math.round(p.z*50));
+  });
+}
+function buildPins(){
+  $('#pins').innerHTML=CONS.filter(c=>c.ready).map(c=>{
+    const lit=consLit(c),done=consDone(c);
+    const col=done?'#F0CE7C':c.ready?(lit?'#E0A83C':'rgba(255,255,255,.45)'):'rgba(255,255,255,.25)';
+    return '<button class="pin'+(done?' done':'')+(c.ready?'':' soon')+'" id="pin'+c.g+'" data-g="'+c.g+'">'
+      +'<span class="d" style="background:'+col+'"></span>'+G2(c.g)+'강'
+      +(c.ready?' <span class="s">'+lit+'/'+c.n+'</span>':'')+'</button>';
+  }).join('');
+  $$('#pins .pin').forEach(b=>{
+    /* 핀 위에서 시작한 포인터는 천구 드래그로 넘기지 않는다 (클릭이 삼켜지는 문제) */
+    b.addEventListener('pointerdown',e=>{e.stopPropagation();idle=110});
+    b.addEventListener('click',e=>{e.stopPropagation();pick(+b.dataset.g)});
+  });
+}
+function loop(){
+  if(!drag){
+    if(idle>0){ idle--; rot+=vel; }
+    else rot+=spin+vel;
+    vel*=.93; if(Math.abs(vel)<.001)vel=0;
+    if(velT){ tilt=clamp(tilt+velT,-TMAX,TMAX); velT*=.9; if(Math.abs(velT)<1e-5)velT=0; }
+  }
+  draw(); RAF=requestAnimationFrame(loop);
+}
+/* 핀을 누르면 그 강 화면으로 진입 */
+function pick(g){
+  const l=gT(g);
+  if(!l.length){toast(g+'강은 아직 준비 중입니다');return}
+  buzz(8);UNIT=g;go('unit');
+}
+$('#sphere').addEventListener('pointerdown',e=>{
+  drag=true;lastX=e.clientX;lastY=e.clientY;vel=0;velT=0;idle=110;
+  try{$('#sphere').setPointerCapture(e.pointerId)}catch(_){}
+});
+/* 핀에 손이 닿기만 해도 천구를 멈춰 조준하기 쉽게 */
+$('#pins').addEventListener('pointerdown',()=>{idle=110},true);
+$('#pins').addEventListener('pointerover',()=>{idle=Math.max(idle,60)},true);
+$('#sphere').addEventListener('pointermove',e=>{
+  if(!drag)return;
+  const dx=e.clientX-lastX, dy=e.clientY-lastY;
+  lastX=e.clientX; lastY=e.clientY;
+  rot-=dx*.34; vel=-dx*.055;
+  tilt=clamp(tilt+dy*.0055,-TMAX,TMAX); velT=dy*.0009;
+});
+$('#sphere').addEventListener('pointerup',()=>{drag=false});
+/* 두 번 톡 치면 처음 시점으로 되돌아온다 */
+$('#sphere').addEventListener('dblclick',e=>{
+  e.preventDefault();velT=0;vel=0;buzz(8);
+  const from=tilt,to=HOME_TILT,t0=performance.now();
+  (function ease(){
+    const k=Math.min(1,(performance.now()-t0)/420);
+    tilt=from+(to-from)*(1-Math.pow(1-k,3));
+    if(k<1)requestAnimationFrame(ease);
+  })();
+});
+$('#sphere').addEventListener('pointercancel',()=>{drag=false});
+window.addEventListener('resize',()=>{fit();draw()});
+
+
+/* ===================== 화면 전환 ===================== */
+let STACK=['home'];
+function show(s){
+  $$('.scr').forEach(x=>x.classList.toggle('on',x.id==='s-'+s));
+  scrollTo({top:0,behavior:'instant'});
+  if(s==='home'){ if(!RAF){fit();loop()} } else { cancelAnimationFrame(RAF);RAF=0; }
+  ({home:renderHome,unit:renderUnit,study:renderStudy,note:renderNote,search:()=>paint($('#q').value)})[s]?.();
+}
+function go(s){if(STACK[STACK.length-1]!==s)STACK.push(s);show(s)}
+function back(){if(STACK.length>1)STACK.pop();show(STACK[STACK.length-1])}
+['#unitBack','#studyBack','#noteBack','#searchBack'].forEach(x=>$(x).addEventListener('click',back));
+['#openSearch','#openSearch2','#openSearch3','#openSearch4'].forEach(x=>$(x).addEventListener('click',()=>{
+  go('search');setTimeout(()=>$('#q').focus(),140)}));
+
+/* ===================== 홈 ===================== */
+function unitRow(g){
+  const l=gT(g),rdy=l.length>0,k=rdy?known(l):0,p=rdy?Math.round(k/l.length*100):0;
+  return '<button class="urow'+(p===100?' done':'')+'" data-g="'+g+'"'+(rdy?'':' data-lock="1"')+'>'
+    +'<span class="gno">'+G2(g)+'강</span>'
+    +'<span class="t"><b>'+GNAME(g)+'</b>'+(rdy?'<span class="tr"><i style="width:'+p+'%"></i></span>':'')+'</span>'
+    +'<span class="v num">'+(rdy?k+' / '+l.length+'토픽':'준비 중')+'</span></button>';
+}
+let MORE=false;
+function renderHome(){
+  $('#diagBox').innerHTML = DIAG.length
+    ? '<div class="diag"><b>데이터에 확인할 점이 '+DIAG.length+'건 있습니다</b><ul>'
+      +DIAG.slice(0,8).map(function(x){return '<li>'+x+'</li>'}).join('')
+      +(DIAG.length>8?'<li>… 외 '+(DIAG.length-8)+'건</li>':'')+'</ul></div>'
+    : '';
+  $('#grassN').textContent=DB.streak.days;
+  buildPins();
+  $('#skyN').textContent=CONS.filter(consDone).length+' / 20';
+  const w=wrongs().length,b=bms().length;
+  $('#bmN').textContent=b?b+'개':'';
+  $('#noteDesc').innerHTML = w
+    ? '지금 <b style="color:var(--no)">'+w+'개</b>가 담겨 있어요. 눌러서 다시 확인해 보세요.'
+    : '잘 안 외워지는 토픽은 <b>몰라요·헷갈려요</b>로 판정하면 여기에 모입니다.';
+  $('#noteDesc').parentElement.onclick=()=>{NOTE='wrong';go('note')};
+  $('#noteDesc').parentElement.style.cursor='pointer';
+
+  const last=DB.last&&byId(DB.last)?byId(DB.last):null;
+  $('#resumeBtn').innerHTML=
+    '<svg class="planet" viewBox="0 0 60 60" aria-hidden="true">'
+    +'<defs><linearGradient id="plg" x1=".3" y1="0" x2=".7" y2="1">'
+    +'<stop offset="0" stop-color="#CFF5EC"/><stop offset=".45" stop-color="#7DD6C2"/>'
+    +'<stop offset="1" stop-color="#2E8A78"/></linearGradient></defs>'
+    +'<ellipse cx="30" cy="32" rx="23" ry="7.4" fill="none" stroke="#2A7A6A" stroke-width="2.1" transform="rotate(-20 30 32)"/>'
+    +'<circle cx="30" cy="32" r="12" fill="url(#plg)"/>'
+    +'<ellipse cx="26" cy="28" rx="3.6" ry="2.4" fill="#fff" opacity=".45"/>'
+    +'<path d="M18 32a12 12 0 0 0 24 0" fill="#000" opacity=".08"/>'
+    +'<ellipse cx="30" cy="32" rx="23" ry="7.4" fill="none" stroke="#D7F5EE" stroke-width="2.1"'
+    +' transform="rotate(-20 30 32)" stroke-dasharray="24 80" stroke-dashoffset="-2"/>'
+    +'<g fill="#D7F5EE"><circle cx="9" cy="12" r="1.2"/><circle cx="51" cy="17" r="1"/><circle cx="46" cy="8" r=".8"/></g></svg>'
+    +'<span class="t"><b>'+(last?'이어서 학습할까요?':'오늘도 한 판 시작해 볼까요?')+'</b>'
+    +'<span class="go">'+(last?'<span class="lb">이어서</span><span class="chip">'+plain(last.t)+'</span>'
+      :'<span class="lb">수능 필수 5강부터</span><span class="chip">17강 고용보험</span>')+'</span></span>'
+    +'<svg class="ico cv" style="width:19px"><use href="#i-chev"/></svg>';
+  $('#resumeBtn').onclick=()=>{
+    if(last){openTopic(last.id,gT(last.g))}
+    else{const l=gT(17);if(l.length)openTopic(l[0].id,l)}
+  };
+  $('#coreList').innerHTML=CORE.map(unitRow).join('');
+  const tot=CORE.reduce((a,g)=>a+gT(g).length,0);
+  $('#coreTot').textContent='총 '+tot+'토픽';
+  $('#restList').innerHTML=MORE?'<div class="card" style="padding:6px 12px 12px">'
+    +REST.map(unitRow).join('')+'</div>':'';
+  $('#moreTx').textContent=MORE?'접기':'추가 '+REST.length+'강 · 더 보기';
+  $('#moreBtn').classList.toggle('open',MORE);
+  $$('.urow').forEach(b=>b.addEventListener('click',()=>{
+    if(b.dataset.lock){toast(b.dataset.g+'강은 아직 준비 중입니다');return}
+    UNIT=+b.dataset.g;go('unit')}));
+}
+$('#moreBtn').addEventListener('click',()=>{MORE=!MORE;renderHome()});
+$('#bmBtn').addEventListener('click',()=>{NOTE='bm';go('note')});
+
+/* ===================== 강 화면 (4층 트리) ===================== */
+let UNIT=17, OPENG={}, OPENS={};
+function renderUnit(){
+  const g=UNIT,G=UNITS[g]||[],all=gT(g);
+  $('#unitTitle').innerHTML=G2(g)+'강 · '+GNAME(g)+'<svg class="ico cv" style="display:inline-block;width:15px"><use href="#i-cdown"/></svg>';
+  $('#unitTitle').onclick=openUnitSheet;
+  let h='';
+  G.forEach((Gr,gi)=>{
+    const gids=Gr.subs.flatMap(S=>S.ids),gk=known(gids.map(byId));
+    const op=OPENG[g+'-'+gi];
+    h+='<div class="gbox'+(op?' open':'')+'" data-gi="'+gi+'">'
+      +'<button class="ghd"><b>'+Gr.rn+'. '+Gr.nm+'</b>'
+      +'<span class="meta">'+Gr.subs.length+'개 중분류 · '+gk+'/'+gids.length+'</span>'
+      +'<svg class="ico cv" style="width:17px"><use href="#i-cdown"/></svg></button>'
+      +'<div class="gbody"><div class="tree">';
+    Gr.subs.forEach((S,si)=>{
+      const so=OPENS[g+'-'+gi+'-'+si];
+      h+='<div class="sub'+(so?' open':'')+'" data-si="'+si+'">'
+        +'<button class="subhd"><b>'+(si+1)+'. '+S.nm+'</b>'
+        +'<span class="meta">'+S.ids.length+'개 토픽</span>'
+        +'<svg class="ico cv"><use href="#i-cdown"/></svg></button><div class="tlist">';
+      S.ids.forEach((id,ti)=>{
+        const t=byId(id);if(!t)return;
+        const st=stOf(id);
+        h+='<button class="tpill'+(st==='know'?' know':'')+'" data-id="'+id+'">'
+          +'<span class="no">토픽 '+(ti+1)+'</span><b>'+plain(t.t)+'</b>'
+          +(st&&st!=='know'?'<span class="mk '+st+'"></span>':'')
+          +(isBM(id)?'<span class="mk bm"></span>':'')
+          +'<span class="stars">'+starHTML(starOf(t)).replace(/<i>.*<\/i>/,'')+'</span></button>';
+      });
+      h+='</div></div>';
+    });
+    h+='</div><button class="allbtn" data-all="'+gi+'">'
+      +'<svg class="ico"><use href="#i-tree"/></svg>'+Gr.nm+' 한판보기'
+      +'<svg class="ico cv" style="width:17px"><use href="#i-chev"/></svg></button></div></div>';
+  });
+  $('#unitBody').innerHTML=h;
+  $('#unitCnt').innerHTML='<span class="num">'+all.length+'</span>토픽 <span>· '+known(all)+'개 완료</span>';
+
+  $$('#unitBody .ghd').forEach((b,i)=>b.addEventListener('click',()=>{
+    const k=g+'-'+i;OPENG[k]=!OPENG[k];renderUnit()}));
+  $$('#unitBody .gbox').forEach(box=>{
+    const gi=box.dataset.gi;
+    box.querySelectorAll('.subhd').forEach((b,si)=>b.addEventListener('click',()=>{
+      const k=g+'-'+gi+'-'+si;OPENS[k]=!OPENS[k];renderUnit()}));
+  });
+  $$('#unitBody .tpill').forEach(b=>b.addEventListener('click',()=>openTopic(b.dataset.id,all)));
+  $$('#unitBody .allbtn').forEach(b=>b.addEventListener('click',()=>{
+    const gi=+b.dataset.all,ids=UNITS[g][gi].subs.flatMap(S=>S.ids).map(byId).filter(Boolean);
+    if(ids.length)openTopic(ids[0].id,ids)}));
+}
+$('#unitGo').addEventListener('click',()=>{
+  const all=gT(UNIT);if(!all.length)return;
+  const nxt=all.find(t=>stOf(t.id)!=='know')||all[0];
+  openTopic(nxt.id,all);
+});
+function openUnitSheet(){
+  $('#sheetBody').innerHTML=[...CORE,...REST].map(g=>{
+    const l=gT(g),r=l.length>0;
+    return '<button class="it'+(g===UNIT?' on':'')+(r?'':' lock')+'" data-g="'+g+'"'+(r?'':' disabled style="opacity:.4"')+'>'
+      +'<span class="gno">'+G2(g)+'강</span><span>'+GNAME(g)+'</span>'
+      +'<span class="v num">'+(r?known(l)+'/'+l.length:'준비 중')+'</span></button>';
+  }).join('');
+  $('#sheet').classList.add('on');
+  $$('#sheetBody .it').forEach(b=>b.addEventListener('click',()=>{
+    if(b.disabled)return;UNIT=+b.dataset.g;$('#sheet').classList.remove('on');renderUnit()}));
+}
+$('#sheetBg').addEventListener('click',()=>$('#sheet').classList.remove('on'));
+
+/* ===================== 학습 화면 ===================== */
+let FLOW=[],FI=0,MODE='quiz';
+function openTopic(id,flow){
+  FLOW=(flow&&flow.length?flow:[byId(id)]).filter(Boolean);
+  FI=Math.max(0,FLOW.findIndex(t=>t.id===id));
+  MODE='quiz';go('study');
+}
+function setMode(m){
+  MODE=m;
+  $$('#seg button').forEach(b=>{b.classList.toggle('on',b.dataset.m===m);b.classList.toggle('ans',b.dataset.m==='ans')});
+  const body=$('#studyBody');
+  body.className='pad mode-'+m;
+  const t=FLOW[FI],items=t.k,hs=hintsOf(mainK(t));
+  let hi=0;
+  body.querySelectorAll('.ans li').forEach((li,i)=>{
+    const tx=li.querySelector('.tx'),k=items[i],aux=isAux(k);
+    if(m==='quiz')tx.innerHTML='';
+    else if(m==='hint')tx.innerHTML=aux?'＋':esc(hs[hi++]||'');
+    else tx.innerHTML=aux?stripAux(k):k;
+    if(m!=='hint'&&!aux&&i<items.length){}
+  });
+  if(m==='hint'){ // aux 항목은 힌트 인덱스에서 제외되므로 재계산
+    let j=0;
+    body.querySelectorAll('.ans li').forEach((li,i)=>{
+      const aux=isAux(items[i]);
+      li.querySelector('.tx').innerHTML=aux?'＋':esc(hs[j++]||'');
+    });
+  }
+}
+$$('#seg button').forEach(b=>b.addEventListener('click',()=>{setMode(b.dataset.m);buzz(5)}));
+function renderStudy(){
+  const t=FLOW[FI];if(!t)return;
+  const P=PATH[t.id]||{};
+  DB.last=t.id;save();
+  $('#studyTitle').textContent=G2(t.g)+'강 · '+GNAME(t.g);
+  $('#crumb').innerHTML=P.G
+    ? '<span class="c"><b>'+P.G.rn+'. '+P.G.nm+'</b><span class="sep">›</span></span>'
+      +'<span class="c on"><b>'+(P.si+1)+'. '+P.S.nm+'</b></span>'
+    : '';
+  $('#tno').textContent='토픽 '+((P.ti||0)+1);
+  $('#tsrc').textContent=t.s||BADGE[t.b]||BADGE.book;
+  $('#tTitle').innerHTML=plain(t.t)+' <span class="stars">'+starHTML(starOf(t))+'</span>';
+  $('#bmToggle').classList.toggle('on',isBM(t.id));
+  $('#bmToggle').onclick=()=>{
+    if(isBM(t.id))delete DB.bm[t.id];else DB.bm[t.id]={t:Date.now()};
+    save();$('#bmToggle').classList.toggle('on',isBM(t.id));
+    toast(isBM(t.id)?'다시 볼 토픽에 담았습니다':'북마크를 해제했습니다');buzz(6)};
+
+  const mk=mainK(t),st=stOf(t.id);
+  let n=0;
+  $('#studyBody').innerHTML=
+    '<div class="blk"><div class="q"><b>'+plain(t.t)+'</b><span class="n num">'+mk.length+'</span>'
+    +'<button class="note'+(isBM(t.id)?' on':'')+'" id="blkBm"><svg class="ico"><use href="#i-book"/></svg></button></div>'
+    +'<ul class="ans">'+t.k.map((k,i)=>{const aux=isAux(k);if(!aux)n++;
+      return '<li'+(aux?' class="aux"':'')+'><span class="i num">'+(aux?'＋':n)+'</span>'
+        +'<span class="v"><span class="tx"></span></span></li>'}).join('')+'</ul>'
+    +'<div class="blkfoot">'
+    +'<span class="tagx '+(t.b==='law'?'g':'')+'">'+(BADGE[t.b]||BADGE.book)+'</span>'
+    +(t.n?'<span class="tagx o">숫자</span>':'')
+    +(t.x?t.x.map(x=>'<span class="tagx">'+x+'</span>').join(''):'')
+    +(t.p&&byId(t.p)?'<button class="pairbtn" id="pairGo"><svg class="ico"><use href="#i-scale"/></svg>'+plain(byId(t.p).t)+'</button>':'')
+    +'</div></div>'
+    +'<div class="jhint">스스로 판정하면 오답 노트에 자동으로 모입니다</div>'
+    +'<div class="judge" id="judge">'
+    +'<button class="jb n'+(st==='no'?' on':'')+'" data-j="no"><svg class="ico"><use href="#i-slash"/></svg><b>몰라요</b></button>'
+    +'<button class="jb m'+(st==='fuzzy'?' on':'')+'" data-j="fuzzy"><svg class="ico"><use href="#i-turn"/></svg><b>헷갈려요</b></button>'
+    +'<button class="jb k'+(st==='know'?' on':'')+'" data-j="know"><svg class="ico"><use href="#i-check"/></svg><b>알아요</b></button></div>';
+  $('#blkBm').onclick=()=>$('#bmToggle').onclick();
+  const pg=$('#pairGo');
+  if(pg)pg.onclick=()=>{NOTE='pair';PFOCUS=t.id;go('note')};
+  $$('#judge .jb').forEach(b=>b.addEventListener('click',()=>{
+    const j=b.dataset.j,pv=DB.st[t.id]||{n:0};
+    DB.st[t.id]={s:j,n:(pv.n||0)+1,t:Date.now()};
+    DB.today.c++;tick();save();buzz(j==='know'?10:6);
+    $$('#judge .jb').forEach(x=>x.classList.toggle('on',x.dataset.j===j));
+    if(MODE==='quiz')setMode('ans');
+    setTimeout(()=>{if(FI<FLOW.length-1){FI++;renderStudy()}else toast('이 범위를 모두 확인했습니다')},420);
+  }));
+  setMode(MODE==='quiz'?'quiz':MODE);
+  $('#pagerMid').textContent=(FI+1)+' / '+FLOW.length;
+  $('#prevBtn').disabled=FI===0;$('#nextBtn').disabled=FI===FLOW.length-1;
+}
+$('#prevBtn').addEventListener('click',()=>{if(FI>0){FI--;MODE='quiz';renderStudy()}});
+$('#nextBtn').addEventListener('click',()=>{if(FI<FLOW.length-1){FI++;MODE='quiz';renderStudy()}});
+
+/* ===================== 노트 ===================== */
+let NOTE='wrong',NG='all',PFOCUS=null;
+function pairs(){const seen=new Set(),o=[];
+  TOPICS.forEach(t=>{const b=t.p&&byId(t.p);if(!b)return;
+    const k=[t.id,b.id].sort().join('|');if(seen.has(k))return;seen.add(k);o.push([t,b])});return o}
+function lrow(t,q){
+  const mk=s=>q?plain(s).replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>'):plain(s);
+  const kk=q?t.k.filter(k=>plain(k).toLowerCase().includes(q.toLowerCase())):[];
+  const P=PATH[t.id]||{};
+  return '<button class="lrow" data-id="'+t.id+'"><span class="mk2 '+(stOf(t.id)||'none')+'"></span>'
+    +'<span class="t"><b>'+mk(t.t)+'</b><small>'+G2(t.g)+'강 · '+(P.G?P.G.rn+'. '+P.G.nm:GNAME(t.g))+'</small>'
+    +(kk.length?'<span class="kw">'+kk.slice(0,2).map(k=>'· '+mk(stripAux(k))).join('<br>')+'</span>':'')
+    +'</span>'+(isBM(t.id)?'<span class="bmk"><svg class="ico"><use href="#i-bookmark"/></svg></span>':'')
+    +'<svg class="ico cv" style="width:17px"><use href="#i-chev"/></svg></button>';
+}
+$$('#noteTabs button').forEach(b=>b.addEventListener('click',()=>{NOTE=b.dataset.t;PFOCUS=null;renderNote()}));
+function renderNote(){
+  const w=wrongs(),b=bms();
+  $('#cW').textContent=w.length;$('#cB').textContent=b.length;$('#cP').textContent=pairs().length;
+  $$('#noteTabs button').forEach(x=>x.classList.toggle('on',x.dataset.t===NOTE));
+  $('#noteTitle').textContent=NOTE==='bm'?'다시 볼 토픽':NOTE==='pair'?'혼동 짝':'오답 노트';
+
+  if(NOTE==='pair'){
+    $('#noteChips').innerHTML='';
+    $('#noteBody').innerHTML=pairs().map(([a,c])=>{
+      const hot=PFOCUS&&(a.id===PFOCUS||c.id===PFOCUS);
+      const li=t=>t.k.filter(k=>!isAux(k)).map(k=>'<li>'+k+'</li>').join('');
+      return '<div class="pset" id="p-'+a.id+'"'+(hot?' style="outline:2px solid var(--navy);outline-offset:7px;border-radius:19px"':'')+'>'
+        +'<div class="pcap">'+G2(a.g)+'강'+(a.g!==c.g?' · '+G2(c.g)+'강':'')+'</div>'
+        +'<div class="pgrid"><div class="pc l"><h4>'+plain(a.t)+'</h4><ul>'+li(a)+'</ul></div>'
+        +'<div class="pc r"><h4>'+plain(c.t)+'</h4><ul>'+li(c)+'</ul></div></div></div>'}).join('');
+    if(PFOCUS)setTimeout(()=>{const e=document.getElementById('p-'+PFOCUS);
+      e&&e.scrollIntoView({block:'center',behavior:'smooth'})},240);
+    return;
+  }
+  let L=NOTE==='bm'?b:w;
+  const gs=[...new Set(L.map(t=>t.g))].sort((x,y)=>x-y);
+  $('#noteChips').innerHTML=gs.length>1?'<div class="chips" style="padding-left:0;padding-right:0">'
+    +['all',...gs].map(g=>'<button class="chip'+(NG==g?' on':'')+'" data-g="'+g+'">'
+      +(g==='all'?'전체':G2(g)+'강')+'<span class="n num">'+(g==='all'?L.length:L.filter(t=>t.g==g).length)+'</span></button>').join('')
+    +'</div>':'';
+  $$('#noteChips .chip').forEach(x=>x.addEventListener('click',()=>{NG=x.dataset.g;renderNote()}));
+  if(NG!=='all')L=L.filter(t=>t.g==NG);
+
+  if(!L.length){
+    $('#noteBody').innerHTML='<div class="card"><div class="void"><svg class="ico"><use href="#i-'+(NOTE==='bm'?'bookmark':'book')+'"/></svg>'
+      +'<p>'+(NOTE==='bm'?'담아둔 토픽이 없습니다.<br>학습 화면 오른쪽 위 북마크를 눌러 담아보세요.'
+        :'담긴 오답이 없습니다.<br>학습하면서 몰라요·헷갈려요로 판정하면 여기에 모입니다.')+'</p></div></div>';
+    return;
+  }
+  $('#noteBody').innerHTML='<button class="btn p" id="runAll"><svg class="ico" style="width:17px"><use href="#i-play"/></svg>'
+    +L.length+'개 이어서 확인</button>'
+    +'<div class="card" style="margin-bottom:12px">'+L.map(t=>lrow(t)).join('')+'</div>'
+    +(NOTE==='wrong'?'<button class="btn g" id="clr">오답 표시 비우기</button>':'');
+  $('#runAll').onclick=()=>openTopic(L[0].id,L);
+  const cl=$('#clr');
+  if(cl)cl.onclick=()=>{if(!confirm('오답 표시를 모두 지울까요?'))return;
+    L.forEach(t=>delete DB.st[t.id]);save();renderNote();toast('표시를 비웠습니다')};
+  $$('#noteBody .lrow').forEach(x=>x.addEventListener('click',()=>openTopic(x.dataset.id,L)));
+}
+
+/* ===================== 검색 ===================== */
+function paint(q){
+  q=(q||'').trim();
+  if(!q){
+    const hot=['구직급여','30일','파견','중대 재해','평균임금','노동위원회'];
+    $('#qRes').innerHTML='<div class="chips" style="padding:0 0 14px">'
+      +hot.map(h=>'<button class="chip" data-h="'+h+'">'+h+'</button>').join('')+'</div>'
+      +'<div class="void"><svg class="ico"><use href="#i-search"/></svg>'
+      +'<p>공개된 토픽 '+TOPICS.length+'개.<br>낱말이나 숫자를 넣어 보세요.</p></div>';
+    $$('#qRes .chip').forEach(b=>b.addEventListener('click',()=>{$('#q').value=b.dataset.h;paint(b.dataset.h)}));
+    return;
+  }
+  const lq=q.toLowerCase();
+  const hit=TOPICS.filter(t=>plain(t.t).toLowerCase().includes(lq)||t.k.some(k=>plain(k).toLowerCase().includes(lq)));
+  if(!hit.length){$('#qRes').innerHTML='<div class="void"><svg class="ico"><use href="#i-search"/></svg>'
+    +'<p>“'+esc(q)+'” 결과가 없습니다.<br>다른 낱말로 찾아보세요.</p></div>';return}
+  $('#qRes').innerHTML='<button class="btn s" id="runQ"><svg class="ico" style="width:17px"><use href="#i-play"/></svg>'
+    +hit.length+'개 이어서 학습</button><div class="card">'+hit.map(t=>lrow(t,q)).join('')+'</div>';
+  $('#runQ').onclick=()=>openTopic(hit[0].id,hit);
+  $$('#qRes .lrow').forEach(b=>b.addEventListener('click',()=>openTopic(b.dataset.id,hit)));
+}
+let _t;$('#q').addEventListener('input',e=>{clearTimeout(_t);_t=setTimeout(()=>paint(e.target.value),150)});
+
+/* ===================== 시작 ===================== */
+try{$('#verTx').textContent='데이터 v'+DATA_VERSION+' · 토픽 '+TOPICS.length+'개 · '}catch(e){}
+renderHome();fit();loop();
+</script></body></html>
