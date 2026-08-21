@@ -1,0 +1,16 @@
+{
+  "name": "은또링쌤의 행성탐사대",
+  "short_name": "행성탐사대",
+  "description": "성공적인 직업생활 인출 학습 · 토픽 하나가 별 하나",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F1F3F6",
+  "theme_color": "#F1F3F6",
+  "lang": "ko",
+  "icons": [
+    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
